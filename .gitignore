@@ -1,0 +1,15 @@
+$ cat .gitignore
+
+#############
+## Dota
+#############
+*.bin
+*.vpk
+*.vtex_c
+*.vxml_c
+*.vjs_c
+*.vcss_c
+panorama/
+maps/
+particles/
+materials/
