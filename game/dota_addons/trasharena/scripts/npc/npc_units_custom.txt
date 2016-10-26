@@ -1,0 +1,1261 @@
+// Units File
+"DOTAUnits"
+{
+	"Version"	"1"
+	//start boss
+	//
+	//
+	//
+	"Start_boss_radiant" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\lane_creeps\creep_radiant_melee\radiant_melee_mega.vmdl" 		
+	"ModelScale" "1.5" 
+	"RingRadius"         "80"
+	"Level" "10" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "4"
+		"Ability2"	"necronomicon_warrior_sight"
+		"Ability3"	"tidehunter_kraken_shell"	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"210" 
+	"AttackDamageMax" 			"220" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"30000" 
+	"StatusHealthRegen" 			"0" 
+	"StatusMana" 				"3000" 
+	"StatusManaRegen" 			"2" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+	
+	"Start_boss_dira" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\lane_creeps\creep_bad_melee\creep_bad_melee_mega.vmdl" 		
+	"ModelScale" "1.5" 
+	"RingRadius"         "80"
+	"Level" "10" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "4"
+		"Ability2"	"necronomicon_warrior_sight"
+		"Ability3"	"tidehunter_kraken_shell"	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"210" 
+	"AttackDamageMax" 			"220" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"30000" 
+	"StatusHealthRegen" 			"0" 
+	"StatusMana" 				"3000" 
+	"StatusManaRegen" 			"2" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+	
+	}
+	//winter boss
+	
+		"Ghost" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\lane_creeps\creep_radiant_ranged_diretide\creep_radiant_ranged_diretide.vmdl" 		
+	"SoundSet"				""
+	"ModelScale" "1.5" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+"AbilityLayout"               "5"
+		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability2"	"necronomicon_warrior_sight"
+		"Ability3"	"tidehunter_kraken_shell"
+		"Ability4"	"neutral_spell_immunity"
+		"Ability5" "necrolyte_heartstopper_aura"
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300000" 
+	"StatusHealthRegen" 			"50" 
+	"StatusMana" 				"3000" 
+	"StatusManaRegen" 			"2" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+		"Skelet" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_troll_skeleton\n_creep_skeleton_melee.vmdl" 		
+	"ModelScale" "1.8" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "4"
+		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability2"	"necronomicon_warrior_sight"
+		"Ability3"	"tidehunter_kraken_shell"
+		"Ability4"	"neutral_spell_immunity"
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300000" 
+	"StatusHealthRegen" 			"50" 
+	"StatusMana" 				"3000" 
+	"StatusManaRegen" 			"2" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+		"Golem_Dire" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models/creeps/lane_creeps/creep_dire_hulk/creep_dire_diretide_ancient_hulk.vmdl" 		
+	"ModelScale" "1.3" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "5"
+		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability2"	"necronomicon_warrior_sight"
+		"Ability3"	"tidehunter_kraken_shell"
+		"Ability4"	"neutral_spell_immunity"
+		"Ability5" "necrolyte_heartstopper_aura"
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300000" 
+	"StatusHealthRegen" 			"50" 
+	"StatusMana" 				"3000" 
+	"StatusManaRegen" 			"2" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+
+"Golem_Radiant" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\lane_creeps\creep_radiant_hulk\creep_radiant_ancient_hulk.vmdl" 		
+	"ModelScale" "1.3" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "5"
+		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability2"	"necronomicon_warrior_sight"
+		"Ability3"	"tidehunter_kraken_shell"
+		"Ability4"	"neutral_spell_immunity"
+		"Ability5" "necrolyte_heartstopper_aura"
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300000" 
+	"StatusHealthRegen" 			"50" 
+	"StatusMana" 				"3000" 
+	"StatusManaRegen" 			"2" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+	//swamp boss
+	"Troll" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_troll_dark_b\n_creep_troll_dark_frost.vmdl" 		
+	"ModelScale" "1.3" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "5"
+		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability2"	"necronomicon_warrior_sight"
+		"Ability3"	"tidehunter_kraken_shell"
+		"Ability4"	"neutral_spell_immunity"
+		"Ability5" "necrolyte_heartstopper_aura"
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300000" 
+	"StatusHealthRegen" 			"50" 
+	"StatusMana" 				"3000" 
+	"StatusManaRegen" 			"2" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+	"Creep_base" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_troll_dark_a\n_creep_troll_dark_a.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+	"Creep_base_2" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_forest_trolls\n_creep_forest_troll_high_priest.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+		"Creep_base_3" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_forest_trolls\n_creep_forest_troll_berserker.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+	
+	
+		"Creep_swamp_1" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_gnoll\n_creep_gnoll.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+	
+	
+		"Creep_swamp_2" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_kobold\kobold_a\n_creep_kobold_a.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+		"Creep_swamp_3" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_kobold\kobold_c\n_creep_kobold_c.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+	"Creep_winter_1" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_ogre_lrg\n_creep_ogre_lrg.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}	
+		"Creep_winter_2" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_ghost_b\n_creep_ghost_b.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}	
+		"Creep_winter_3" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_satyr_b\n_creep_satyr_b.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}	
+	
+		"Creep_winter_4" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_centaur_lrg\n_creep_centaur_lrg.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}	
+		"Creep_desert_1" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_worg_large\n_creep_worg_large.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+		"Creep_desert_2" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_vulture_a\n_creep_vulture_a.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+		"Creep_desert_3" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_ogre_med\n_creep_ogre_med.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+		"Creep_desert_4" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\neutral_creeps\n_creep_golem_b\n_creep_golem_b.vmdl" 		
+	"ModelScale" "1" 
+	"RingRadius"         "80"
+	"Level" "100" 
+	"ConsideredHero"        "1"
+	
+	    
+
+	"AbilityLayout"               "0"
+	
+	"ArmorPhysical" 		"25" 
+	"MagicalResistance" 		"100" 
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"320" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"300" 
+	"StatusHealthRegen" 			"2" 
+	"StatusMana" 				"0" 
+	"StatusManaRegen" 			"0" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
+
+	}
+	
+
+}
