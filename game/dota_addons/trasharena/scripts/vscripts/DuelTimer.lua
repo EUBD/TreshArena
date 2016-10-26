@@ -1,4 +1,6 @@
-
+if DuelTimer == nil then
+	_G.DuelTimer = class({})
+end
 
 function DuelTimer:StartTimerDuel()
 
@@ -8,7 +10,11 @@ function DuelTimer:StartTimerDuel()
 end
 
 function KillBoss()
-	DuelTimer:StartTimerDuel();
+	if(not IsKillBoss) then
+		IsKillBoss = true;
+		DuelTimer:StartTimerDuel();
+
+	end
 end
 
 

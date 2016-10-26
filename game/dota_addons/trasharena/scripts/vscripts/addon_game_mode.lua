@@ -10,21 +10,13 @@ _G.Creeps = {"npc_dota_neutral_kobold","npc_dota_neutral_centaur_outrunner","npc
 _G.TriggerType = {"lowSpawn","middleSpawn","hideSpawn"}
 _G.NcripsInStack = 4
 
-if DuelTimer == nil then
-	_G.DuelTimer = class({})
-end
+
 
 require( 'DuelTimer')
 
-if DuelTeleport == nil then
-	_G.DuelTeleport = class({})
-end
 
 require( 'DuelTeleport' )
 
-if Events == nil then
-	_G.Events = class({})
-end
 
 require( 'Events' )
 

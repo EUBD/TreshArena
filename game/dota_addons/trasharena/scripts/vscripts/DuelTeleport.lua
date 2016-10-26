@@ -1,11 +1,13 @@
-
+if DuelTeleport == nil then
+	_G.DuelTeleport = class({})
+end
 
 _G.DireTpPoint = "TpDuelDier"
 _G.RadiantTpPoint = "TpDuelRadiant"
 _G.DireTeam = 3
 _G.RadiantTeam = 2
-_G.IntervalDuel = 240
-_G.TimeDuel = 60
+_G.IntervalDuel = 50
+_G.TimeDuel = 30
 _G.isDuel = false
 
 
@@ -76,15 +78,24 @@ function TeleportRadiant()
 	local DuelTpEntRadiant = Entities:FindByName(nil,RadiantTpPoint);
 	local DuelTpPointRadiant = DuelTpEntRadiant:GetAbsOrigin();
 	local RadiantTeam = GetTableplayers(RadiantTeam);
-	if(RadiantTeam == nill) then return nil; end
+	local counter=0;
+	if(RadiantTeam == nill) then   
+	  DuelTeleport:WinTeam(DireTeam);
+	  return nil; 
+	end
 	for _,player in pairs(RadiantTeam) do
 
-		if(player:IsAlive()) then		
+		if(player:IsAlive()) then	
+			counter = counter + 1;	
 			SaveAbout(player);
 			maxMod(player);
 			Teleport(player,DuelTpPointRadiant);
      	end
 
+     end
+
+     if(counter == 0) then
+     	--DuelTeleport:WinTeam(DireTeam);
      end
 
 end
@@ -93,10 +104,16 @@ function TeleportDire()
 	local DuelTpEntDire = Entities:FindByName(nil,DireTpPoint);
 	local DuelTpPointDire = DuelTpEntDire:GetAbsOrigin();
 	local DireTeam = GetTableplayers(DireTeam);
-	if(DireTeam == nill) then return nil; end
+	local counter=0;
+	if(DireTeam == nill) then  
+		
+		return nil; 
+	end
+
 	for _,player in pairs(DireTeam) do
 
 		if(player:IsAlive()) then
+			counter = counter + 1;
 			SaveAbout(player);
 			maxMod(player);
 			Teleport(player,DuelTpPointDire);
@@ -104,6 +121,9 @@ function TeleportDire()
 
      end
 
+     if(counter == 0) then
+     	--DuelTeleport:WinTeam(RadiantTeam);
+     end
 
 end
 

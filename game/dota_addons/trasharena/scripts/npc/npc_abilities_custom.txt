@@ -134,4 +134,66 @@
 		}
 	}
 	
+	
+	//=================================================================================================================
+	// Ability: Attribute Bonus
+	//=================================================================================================================
+	"attribute_bonus"
+		{
+			"MaxLevel"				"80"
+			"LevelsBetweenUpgrades"  "1"
+		}
+		
+		"ability_modifier_test"
+		{
+			// General
+			//-------------------------------------------------------------------------------------
+			"BaseClass" "ability_datadriven"
+			"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+			// Stats
+			//-------------------------------------------------------------------------------------
+			"AbilityManaCost" "0"
+			"AbilityCooldown" "0"
+		
+			// Special
+			//-------------------------------------------------------------------------------------
+	
+			// Data Driven
+			//-------------------------------------------------------------------------------------
+			"OnToggleOn"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName" "modifier_example"
+					"Target" "CASTER"
+				}
+			}
+		
+			"OnToggleOff"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName" "modifier_example"
+					"Target" "CASTER"
+				}
+			}
+		
+			"Modifiers"
+			{
+				"modifier_example"
+				{
+					"IsBuff" "1"
+					"IsHidden" "0"
+					"Passive" "1"
+					"Attributes" 		    "MODIFIER_ATTRIBUTE_MULTIPLE"
+					"Properties"
+					{
+						"MODIFIER_PROPERTY_HEALTH_BONUS"		"1000"
+					}
+				}
+			}    
+		}
+	
+	
 }
