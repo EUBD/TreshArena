@@ -1,1 +1,1 @@
-# TreshArena
+# TrAshArena
