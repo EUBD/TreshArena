@@ -6,14 +6,12 @@ function Events:Onplayer_death(event)
 	print("player_death");
 	if(isDuel) then 
 
-		if(DuelTeleport:IskilledAllTeam(RadiantTeam)) then
+		if(DuelTeleport:amtKilleTeamNumber(DireTeam)==0) then
 			DuelTeleport:WinTeam(RadiantTeam)
-			print("Winner Radiant")
 		end
 
- 		if(DuelTeleport:IskilledAllTeam(DireTeam)) then
+ 		if(DuelTeleport:amtKilleTeamNumber(RadiantTeam)==0) then
  			DuelTeleport:WinTeam(DireTeam)
- 			print("Winner Dier")
  		end
 
 	end
@@ -21,7 +19,6 @@ end
 
 
 function GoOutFromZoneArena(event)
-	DeepPrintTable(event);
 	local hero = event.activator;
 	if(isDuel) then
 		if(event.activator:GetTeamNumber() == RadiantTeam) then

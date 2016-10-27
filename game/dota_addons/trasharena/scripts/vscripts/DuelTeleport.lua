@@ -6,9 +6,10 @@ _G.DireTpPoint = "TpDuelDier"
 _G.RadiantTpPoint = "TpDuelRadiant"
 _G.DireTeam = 3
 _G.RadiantTeam = 2
-_G.IntervalDuel = 50
-_G.TimeDuel = 30
+_G.IntervalDuel = 52
+_G.TimeDuel = 32
 _G.isDuel = false
+_G.IsKillBoss = false;
 
 
 
@@ -19,15 +20,33 @@ end
 function TeleporTeams()
 		
 	print("Teleport");
-	isDuel = true;
+	local amtDire, amtRadiant;
+	local amtMin;
 
-	Timers:CreateTimer(2, function() CustomGameEventManager:Send_ServerToAllClients("display_timer", {msg="Finish", duration=TimeDuel-2, mode=0, endfade=false, position=0, warning=5, paused=false, sound=true} ) return nil end);
+	
+	amtRadiant = getAmtTeam(RadiantTeam);
+	amtDire    =  getAmtTeam(DireTeam);
 
-	TeleportDire();
-	TeleportRadiant();
+	print("Dire amt "..amtDire.." |||  Radiant amt "..amtRadiant);
 
-Timers:CreateTimer(TimeDuel, function() TeleportToEnd() return nil end);
+	if(amtRadiant == 0 or amtDire == 0) then
+		print("Duel not start")
+		DuelTimer:StartTimerDuel();
+	else
 
+		if(amtDire <= amtRadiant) then
+			amtMin = amtDire;
+		else
+			amtMin = amtRadiant;
+		end
+		print("Duel start")
+		isDuel = true;
+		Timers:CreateTimer(2, function()CustomGameEventManager:Send_ServerToAllClients("display_timer", {msg="End", duration=TimeDuel-2, mode=0, endfade=false, position=1, warning=5, paused=false, sound=true}) return nil end);
+		Timers:CreateTimer(TimeDuel, function() TeleportToEnd() return nil end);
+		TeleportDire(amtMin,amtDire);
+		TeleportRadiant(amtMin,amtRadiant);
+		
+	end
 end
 
 
@@ -74,56 +93,104 @@ function TeleportDireToEnd()
 	print("TeleportEnd");
 end
 
-function TeleportRadiant()
+function TeleportRadiant(amtMin,amtRadiant)
 	local DuelTpEntRadiant = Entities:FindByName(nil,RadiantTpPoint);
 	local DuelTpPointRadiant = DuelTpEntRadiant:GetAbsOrigin();
 	local RadiantTeam = GetTableplayers(RadiantTeam);
-	local counter=0;
-	if(RadiantTeam == nill) then   
-	  DuelTeleport:WinTeam(DireTeam);
-	  return nil; 
-	end
-	for _,player in pairs(RadiantTeam) do
+	local counter=1;
+	if(amtRadiant == amtMin) then   
+		for _,player in pairs(RadiantTeam) do
 
-		if(player:IsAlive()) then	
-			counter = counter + 1;	
-			SaveAbout(player);
-			maxMod(player);
-			Teleport(player,DuelTpPointRadiant);
+			if(player:IsAlive()) then	
+				counter = counter + 1;	
+				SaveAbout(player);
+				maxMod(player);
+				Teleport(player,DuelTpPointRadiant);
+     		end
+
+     	end
+     else
+     	local DuelTeam = {};
+     	for i = 1,amtMin do
+     		local num = math.random(1,amtRadiant);
+     		while(IsInByValue(num,DuelTeam)) do
+     			num = math.random(1,amtRadiant);
+     		end
+     		DuelTeamp[i]=num;
+     		print("---------------NUM   "..num);
      	end
 
-     end
-
-     if(counter == 0) then
-     	--DuelTeleport:WinTeam(DireTeam);
-     end
+		for _,player in pairs(RadiantTeam) do
+			if(IsInByValue(counter,DuelTeam)) then
+				if(player:IsAlive()) then	
+					SaveAbout(player);
+					maxMod(player);
+					Teleport(player,DuelTpPointRadiant);
+     			end
+     		end
+     		counter = counter + 1;
+     		
+     	end
+	end
 
 end
 
-function TeleportDire()
+function IsInByValue(key,table)
+
+if(table==nil) then
+	return false;
+end
+
+	for _,value in pairs(table) do
+		if(key==value) then
+			return true;
+		end
+	end
+
+	print("---------------------------IsInByValue -- false")
+	return false;
+	
+end
+
+function TeleportDire(amtMin,amtDire)
 	local DuelTpEntDire = Entities:FindByName(nil,DireTpPoint);
 	local DuelTpPointDire = DuelTpEntDire:GetAbsOrigin();
 	local DireTeam = GetTableplayers(DireTeam);
-	local counter=0;
-	if(DireTeam == nill) then  
-		
-		return nil; 
-	end
+	local counter=1;
+	if(amtDire == amtMin) then   
+		for _,player in pairs(DireTeam ) do
 
-	for _,player in pairs(DireTeam) do
+			if(player:IsAlive()) then	
+				counter = counter + 1;	
+				SaveAbout(player);
+				maxMod(player);
+				Teleport(player,DuelTpPointDire);
+     		end
 
-		if(player:IsAlive()) then
-			counter = counter + 1;
-			SaveAbout(player);
-			maxMod(player);
-			Teleport(player,DuelTpPointDire);
      	end
-
-     end
-
-     if(counter == 0) then
-     	--DuelTeleport:WinTeam(RadiantTeam);
-     end
+     else
+     	local DuelTeam = {};
+     	for i = 1,amtMin do
+     		local num;
+     		num = math.random(1,amtDire);
+     		while(IsInByValue(num,DuelTeam)) do
+     			num = math.random(1,amtDire);
+     		end
+     		DuelTeam[i] = num;
+     		print("---------------NUM   "..num);
+     	end
+		
+		for _,player in pairs(DireTeam) do
+			if(IsInByValue(counter,DuelTeam)) then	
+				if(player:IsAlive()) then		
+					SaveAbout(player);
+					maxMod(player);
+					Teleport(player,DuelTpPointDire);
+     			end
+     		end
+     		counter = counter + 1;
+     	end
+	end
 
 end
 
@@ -137,11 +204,44 @@ function DuelTeleport:WinTeam(TeamNumber)
 		print("Winner Radiant")
 		TeleportToEnd();
 	end
-
 end
 
-function DuelTeleport:IskilledAllTeam(TeamNumber)
-	print(" ---------------------------- Begin IsKelled ------------------------------")
+
+
+function getAmtTeam(TeamNumber)
+ 	local TableDire = {};
+	local TableRadiant = {};
+	local i = 0;
+	local j =0;
+	local Tableusers = HeroList:GetAllHeroes();
+	if(TeamNumber == DireTeam ) then
+
+		for _, hero in pairs(Tableusers) do
+			if(hero:GetTeamNumber() == DireTeam) then
+				if(hero:IsAlive()) then
+					i = i+1;
+				end
+			end 
+		end
+
+			return i;
+
+	else
+
+		for _, hero in pairs(Tableusers) do
+			print(i.." - heroType = "..hero:GetTeamNumber())
+			if(hero:GetTeamNumber() == RadiantTeam) then
+				if(hero:IsAlive()) then
+					j = j+1;
+				end
+			end 
+		end 
+		return j;
+
+	end
+ end
+
+function DuelTeleport:amtKilleTeamNumber(TeamNumber)
 	local TableDire = {};
 	local TableRadiant = {};
 	local i = 0;
@@ -156,13 +256,8 @@ function DuelTeleport:IskilledAllTeam(TeamNumber)
 				end
 			end 
 		end
-							print(" ---------------------------- DIre ------------------------------ "..i);
-				if(i>0) then
 
-			return false;
-		else
-			return true;
-		end
+			return i;
 
 	else
 
@@ -174,12 +269,7 @@ function DuelTeleport:IskilledAllTeam(TeamNumber)
 				end
 			end 
 		end 
-							print(" ---------------------------- Radiant ------------------------------ "..j);
-		if(j>0) then
-			return false;
-		else
-			return true;
-		end
+		return j;
 
 	end
 end
@@ -239,25 +329,13 @@ end
 
 function SaveAbout(hero) 
 
-hero.position = hero:GetAbsOrigin()
-hero.mana = hero:GetMana()
-hero.hp = hero:GetHealth()
-hero.saved = true
+	hero.position = hero:GetAbsOrigin()
+	hero.mana = hero:GetMana()
+	hero.hp = hero:GetHealth()
+	hero.saved = true
 
---[[local count = hero:GetAbilityCount()
---GetCooldownTimeRemaining()
-		for i = 0, count do
-		 local ability = hero:GetAbilityByIndex(i)
-		 if ability:GetLevel() == 0 then hero.ability[i] = nil 
-			else
-				if ability and not ability:IsCooldownReady() then
-					hero.ability[i] = ability:GetCooldownTimeRemaining()
-		 end
-		end
-	end
-]]
-DeepPrintTable(hero)
-print("saved")
+	DeepPrintTable(hero)
+	print("saved")
 end
 
 function RestoreHero(hero) --восстановить кдшки, хп, ману и позиция героя после дуэли

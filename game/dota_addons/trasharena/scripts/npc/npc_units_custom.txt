@@ -47,7 +47,7 @@
 	"MovementSpeed" 			"320" 
 	"MovementTurnRate" 			"0.5" 
 
-	"StatusHealth" 				"3000" 
+	"StatusHealth" 				"30" 
 	"StatusHealthRegen" 			"0" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
@@ -107,7 +107,7 @@
 	"MovementSpeed" 			"320" 
 	"MovementTurnRate" 			"0.5" 
 
-	"StatusHealth" 				"3000" 
+	"StatusHealth" 				"30" 
 	"StatusHealthRegen" 			"0" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
