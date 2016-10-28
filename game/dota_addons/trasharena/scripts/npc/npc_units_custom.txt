@@ -47,7 +47,7 @@
 	"MovementSpeed" 			"320" 
 	"MovementTurnRate" 			"0.5" 
 
-	"StatusHealth" 				"30" 
+	"StatusHealth" 				"3000" 
 	"StatusHealthRegen" 			"0" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
@@ -107,7 +107,7 @@
 	"MovementSpeed" 			"320" 
 	"MovementTurnRate" 			"0.5" 
 
-	"StatusHealth" 				"30" 
+	"StatusHealth" 				"3000" 
 	"StatusHealthRegen" 			"0" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
@@ -141,7 +141,7 @@
 	    
 
 "AbilityLayout"               "5"
-		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability1" "skeleton_king_vampiric_auraforboss" 
 		"Ability2"	"necronomicon_warrior_sight"
 		"Ability3"	"tidehunter_kraken_shell"
 		"Ability4"	"neutral_spell_immunity"
@@ -203,7 +203,7 @@
 	    
 
 	"AbilityLayout"               "4"
-		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability1" "skeleton_king_vampiric_auraforboss" 
 		"Ability2"	"necronomicon_warrior_sight"
 		"Ability3"	"tidehunter_kraken_shell"
 		"Ability4"	"neutral_spell_immunity"
@@ -264,7 +264,7 @@
 	    
 
 	"AbilityLayout"               "5"
-		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability1" "skeleton_king_vampiric_auraforboss" 
 		"Ability2"	"necronomicon_warrior_sight"
 		"Ability3"	"tidehunter_kraken_shell"
 		"Ability4"	"neutral_spell_immunity"
@@ -327,7 +327,7 @@
 	    
 
 	"AbilityLayout"               "5"
-		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability1" "skeleton_king_vampiric_auraforboss" 
 		"Ability2"	"necronomicon_warrior_sight"
 		"Ability3"	"tidehunter_kraken_shell"
 		"Ability4"	"neutral_spell_immunity"
@@ -390,7 +390,7 @@
 	    
 
 	"AbilityLayout"               "5"
-		"Ability1" "skeleton_king_vampiric_aura" 
+		"Ability1" "skeleton_king_vampiric_auraforboss" 
 		"Ability2"	"necronomicon_warrior_sight"
 		"Ability3"	"tidehunter_kraken_shell"
 		"Ability4"	"neutral_spell_immunity"
