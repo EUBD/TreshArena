@@ -16,8 +16,11 @@ XP_PER_LEVEL_TABLE = {0,100}
 for i=3,MAX_LEVEL do 
 XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1] + 100 * i
 end
+<<<<<<< HEAD
 
 LinkLuaModifier( "modifier_fountain_aura_effect_lua", "modifier_fountain_aura_effect_lua.lua", LUA_MODIFIER_MOTION_NONE )
+=======
+>>>>>>> origin/master
 
 require( 'DuelTimer')
 
@@ -157,6 +160,15 @@ function CAddonTemplateGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen( 10 )
 	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 10 )
 	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 20 )
+<<<<<<< HEAD
+=======
+	GameRules:SetHeroSelectionTime(0)
+	GameRules:SetGoldTickTime(3)
+	GameMode:SetBuybackEnabled(true)
+    GameMode:SetStashPurchasingDisabled(false)
+    GameMode:SetLoseGoldOnDeath(true)
+	GameRules:SetHeroRespawnEnabled(true)
+>>>>>>> origin/master
 end
 
 -- Evaluate the state of the game
