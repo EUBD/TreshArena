@@ -6,8 +6,8 @@ _G.DireTpPoint = "TpDuelDier"
 _G.RadiantTpPoint = "TpDuelRadiant"
 _G.DireTeam = 3
 _G.RadiantTeam = 2
-_G.IntervalDuel = 52
-_G.TimeDuel = 32
+_G.IntervalDuel = 22
+_G.TimeDuel = 12
 _G.isDuel = false
 _G.IsKillBoss = false;
 
@@ -102,6 +102,7 @@ function TeleportRadiant(amtMin,amtRadiant)
 		for _,player in pairs(RadiantTeam) do
 
 			if(player:IsAlive()) then	
+				player:AddNewModifier(player, nil, "modifier_fountain_aura_effect_lua", { duration = - 1 })
 				counter = counter + 1;	
 				SaveAbout(player);
 				maxMod(player);
@@ -122,7 +123,7 @@ function TeleportRadiant(amtMin,amtRadiant)
 
 		for _,player in pairs(RadiantTeam) do
 			if(IsInByValue(counter,DuelTeam)) then
-				if(player:IsAlive()) then	
+				if(player:IsAlive()) then
 					SaveAbout(player);
 					maxMod(player);
 					Teleport(player,DuelTpPointRadiant);
@@ -330,35 +331,70 @@ end
 function SaveAbout(hero) 
 
 	hero.position = hero:GetAbsOrigin()
-	hero.mana = hero:GetMana()
-	hero.hp = hero:GetHealth()
-	hero.saved = true
+	hero.mana = hero:GetMana();
+	hero.hp = hero:GetHealth();
+	hero.KdTable = SaveAbilitiesCooldowns(hero);
+	hero.saved = true;
 
-	DeepPrintTable(hero)
-	print("saved")
+
+	DeepPrintTable(hero);
+	print("saved");
 end
 
 function RestoreHero(hero) --восстановить кдшки, хп, ману и позиция героя после дуэли
 	if hero.saved then
-		local position = hero.position
-		local hp = hero.hp
-		local mana = hero.mana
-		hero.saved = false
-		hero:SetHealth(hp)
+		local position = hero.position;
+		local hp = hero.hp;
+		local mana = hero.mana;
+		hero.saved = false;
+		hero:SetHealth(hp);
+		SetAbilitiesCooldowns(hero,hero.KdTable);
 		Teleport(hero,position);
-		--[[local count = hero:GetAbilityCount()
-		FindClearSpaceForUnit(hero, position, false)
-			for i = 0, count do
-				 if hero.ability[i] ~= nil then 
-					hero:GetAbilityByIndex(i):StartCooldown(hero.ability[i])
-				 end
-			end
-			
-		hero.position = nil
-		hero.hp = nil
-		hero.mana = nil
-			for i = 0,5 do
-				hero.ability[i] = nil
-			end]]
 	end
+end
+
+function SaveAbilitiesCooldowns(unit)
+    if not unit then return end
+   
+    local savetable = {}
+    local abilities = unit:GetAbilityCount() - 1
+    for i = 0, abilities do
+        if unit:GetAbilityByIndex(i) then
+            savetable[i] = unit:GetAbilityByIndex(i):GetCooldownTimeRemaining()
+            unit:GetAbilityByIndex(i):EndCooldown() 
+        end
+    end
+
+    savetable.items = {}
+
+    for i = 0, 5 do
+        if unit:GetItemInSlot(i) then
+            savetable.items[unit:GetItemInSlot(i)] = unit:GetItemInSlot(i):GetCooldownTimeRemaining() 
+            unit:GetItemInSlot(i):EndCooldown();
+        end
+    end
+
+    return savetable
+end
+
+function SetAbilitiesCooldowns(unit, settable)
+    local abilities = unit:GetAbilityCount() - 1
+    if not settable or not unit then return end
+    for i = 0, abilities do
+        if unit:GetAbilityByIndex(i) then
+            unit:GetAbilityByIndex(i):StartCooldown(settable[i])
+            if settable[i] == 0 then 
+                unit:GetAbilityByIndex(i):EndCooldown() 
+            end
+        end
+    end
+
+    if settable.items then
+        for item, cooldown in pairs(settable.items) do
+            if item and IsValidEntity(item) then
+                item:EndCooldown() 
+                item:StartCooldown(cooldown) 
+            end
+        end
+    end
 end

@@ -6,11 +6,18 @@ _G.nCREATURE_RESPAWN_TIME = 5
 _G.nCREATURE_RESPAWNBOSS_TIME = 25
 _G.nMaxCreeps = 10
 _G.quantity = {}
-_G.Creeps = {"npc_dota_neutral_kobold","npc_dota_neutral_centaur_outrunner","npc_dota_neutral_centaur_outrunner"}
+_G.Creeps = {"Creep_base","Creep_swamp_2","Creep_winter_2"}
 _G.TriggerType = {"lowSpawn","middleSpawn","hideSpawn"}
 _G.NcripsInStack = 4
 
+MAX_LEVEL = 80  
 
+XP_PER_LEVEL_TABLE = {0,100}
+for i=3,MAX_LEVEL do 
+XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1] + 100 * i
+end
+
+LinkLuaModifier( "modifier_fountain_aura_effect_lua", "modifier_fountain_aura_effect_lua.lua", LUA_MODIFIER_MOTION_NONE )
 
 require( 'DuelTimer')
 
@@ -144,6 +151,12 @@ end
 function CAddonTemplateGameMode:InitGameMode()
 	print( "Template addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+	GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
+    GameRules:GetGameModeEntity():SetCustomHeroMaxLevel( 80 )
+    GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
+	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen( 10 )
+	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 10 )
+	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 20 )
 end
 
 -- Evaluate the state of the game
@@ -155,4 +168,3 @@ function CAddonTemplateGameMode:OnThink()
 	end
 	return 1
 end
-	
