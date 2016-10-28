@@ -10,7 +10,7 @@ _G.Creeps = {"npc_dota_neutral_kobold","npc_dota_neutral_centaur_outrunner","npc
 _G.TriggerType = {"lowSpawn","middleSpawn","hideSpawn"}
 _G.NcripsInStack = 4
 
-LinkLuaModifier ("modifier_fountain_aura_effect_lua", "modifier_fountain_aura_effect_lua.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 require( 'DuelTimer')
 
@@ -104,10 +104,6 @@ end
 
 function OnStartGame(event)
 		print("Detected Event");
-		   	--local ability = FindByName("winduel");
-		   	local hero = EntIndexToHScript(event.entindex);
-		   	print(event.entindex)
-    		hero:AddNewModifier( hero, self, "modifier_fountain_aura_effect_lua", {duration = -1})
 		--Timers:CreateTimer(2, function() DuelTimer:StartTimerDuel() return nil end);
 end
 
