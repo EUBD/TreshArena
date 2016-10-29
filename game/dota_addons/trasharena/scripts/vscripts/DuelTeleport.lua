@@ -216,9 +216,11 @@ function DuelTeleport:WinTeam(TeamNumber)
 
 	if(TeamNumber == DireTeam) then
 		print("Winner Dier")
+			Timers:CreateTimer(1, function()CustomGameEventManager:Send_ServerToAllClients("Show_Winner", {TeamName ="Dire Win"} ) return nil end);
 		TeleportToEnd(DireTeam);
 	else
 		print("Winner Radiant")
+			Timers:CreateTimer(1, function()CustomGameEventManager:Send_ServerToAllClients("Show_Winner", {TeamName ="Radiant Win"} ) return nil end);
 		TeleportToEnd(RadiantTeam);
 	end
 end

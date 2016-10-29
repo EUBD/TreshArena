@@ -7,21 +7,22 @@
 
 .Clip
 {
-    clip: rect(44px, 300px, 110px,0px);
+    clip: rect(44px, 350px, 790px,0px);
     horizontal-align:left;
-    width: 300px;
-    height: 110px;
+    width: 350px;
+    height: 890px;
 }
-
+/* 734 */
 .TimerBox
 {
-    width: 261px;
+    width: 288px;
     height: 80px;
     background-image: url("file://{resources}/images/custom_game/custom_timer_bg.png");
     background-size: 100%;
     horizontal-align: left;
-    margin-top: -78px;
-    margin-right: 15px;
+    margin-top: 790px;
+    margin-right: 0px;
+    margin-left: -4px;
     z-index: -10;
     transition-property: transform;
     transition-duration: 0.25s;
@@ -38,7 +39,7 @@
 
 #TimerMsg
 {
-    margin-top: 34px;
+    margin-top: 19px;
     margin-left: 20px;
     text-align: center;
     width: 130px;
@@ -46,7 +47,7 @@
 
 #TimerRemaining
 {
-    margin-top: 34px;
+    margin-top: 19px;
     margin-left: 144px;
     text-align: center;
     width: 100px;
@@ -54,5 +55,5 @@
 
 .FadeIn
 {
-    transform: translateY(100px);
+    transform: translateY(-53px);
 }

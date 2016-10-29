@@ -9,8 +9,8 @@
   <Panel hittest="false" class="BaseHud">
     <Panel hittest="false" class="Clip">
       <Panel hittest="false" id="TimerBox" class="TimerBox">
-          <Label id="TimerMsg" text="Remaining"/>
-          <Label id="TimerRemaining" text="00:00:00"/>
+          <Label id="TimerMsg" text="Duel"/>
+          <Label id="TimerRemaining" text="kill boss"/>
       </Panel>
     </Panel>
   </Panel>

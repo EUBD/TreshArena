@@ -1,0 +1,52 @@
+.BaseHud
+{
+    width: 100%;
+    height: 100%;
+    flow-children: down;
+}
+
+.Clip
+{
+    clip: rect(44px, 500px, 790px,0px);
+    horizontal-align:center;
+    width: 500px;
+    height: 890px;
+}
+/* 734 */
+.TitleBox
+{
+    width: 500px;
+    height: 80px;
+    background-size: 100%;
+    horizontal-align: center;
+    margin-top: 100px;
+    margin-right: 0px;
+    margin-left: 0px;
+    z-index: -10;
+    transition-property: transform;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+    opacity: 0;
+}
+
+.TitleBox Label
+{
+    color: #FFFFFF;
+    font-size: 41px;
+    font-family: "Edwardian Script ITC";
+    font-weight: bold;
+
+}
+
+#WinnerTeam
+{
+    margin-top: 19px;
+    margin-left: 0px;
+    text-align: center;
+    width: 500px;
+}
+
+.FadeIn
+{
+    opacity: 0.9;
+}

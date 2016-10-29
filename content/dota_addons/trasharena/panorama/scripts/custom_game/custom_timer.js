@@ -56,6 +56,7 @@ function FadeOut() {
 }
 
 function DisplayTimer( table ) {
+	$.Msg('-----------------allooo');
 	timerMessage = table.msg || "Remaining";
 	timerDuration = table.duration;
 	timerMode = table.mode;
