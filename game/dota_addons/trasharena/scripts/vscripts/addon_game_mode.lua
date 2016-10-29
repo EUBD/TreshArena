@@ -17,7 +17,7 @@ for i=3,MAX_LEVEL do
 XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1] + 100 * i
 end
 
-LinkLuaModifier( "modifier_winner_duel_lua", "modifier_winner_duel_lua.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_winner_duel_lua", LUA_MODIFIER_MOTION_NONE )
 
 
 require( 'DuelTimer')

@@ -42,7 +42,7 @@ function TeleporTeams()
 		print("Duel start")
 		isDuel = true;
 		Timers:CreateTimer(2, function()CustomGameEventManager:Send_ServerToAllClients("display_timer", {msg="End", duration=TimeDuel-2, mode=0, endfade=false, position=1, warning=5, paused=false, sound=true}) return nil end);
-		Timers:CreateTimer(TimeDuel, function() TeleportToEnd() return nil end);
+		Timers:CreateTimer(TimeDuel, function() TeleportToEnd(0) return nil end);
 		TeleportDire(amtMin,amtDire);
 		TeleportRadiant(amtMin,amtRadiant);
 		
@@ -50,23 +50,36 @@ function TeleporTeams()
 end
 
 
-function TeleportToEnd()
+function TeleportToEnd(TeamNumber)
 	if(isDuel) then
-		TeleportRadiantToEnd();
-		TeleportDireToEnd();
+		local isWinDire = false;
+		local isWinRadiant = false;
+		if(TeamNumber == RadiantTeam) then
+			isWinRadiant = true;
+		end
+
+		if(TeamNumber == DireTeam) then
+			isWinDire = true;
+		end
+
+		TeleportRadiantToEnd(isWinRadiant);
+		TeleportDireToEnd(isWinDire);
 		isDuel = false;
 		DuelTimer:StartTimerDuel();
 	end
 	return nil
 end
 
-function TeleportRadiantToEnd()
+function TeleportRadiantToEnd(isWin)
 	local RadiantTeam = GetTableplayers(RadiantTeam);
 	if(RadiantTeam == nill) then return nil; end
 	for _,player in pairs(RadiantTeam) do
-
-		if(player:IsAlive()) then
-			
+		if(isWin) then
+			player:AddNewModifier(player, nil, "modifier_winner_duel_lua", { duration = - 1 })
+		else
+			player:RemoveModifierByName("modifier_winner_duel_lua");
+		end
+		if(player:IsAlive()) then	
 			if(player.saved) then
 				RestoreHero(player);
         	end
@@ -77,11 +90,15 @@ function TeleportRadiantToEnd()
 	print("TeleportEnd");
 end
 
-function TeleportDireToEnd()
+function TeleportDireToEnd(isWin)
 	local DireTeam = GetTableplayers(DireTeam);
 	if(DireTeam == nill) then return nil; end
 	for _,player in pairs(DireTeam) do
-
+		if(isWin) then
+			player:AddNewModifier(player, nil, "modifier_winner_duel_lua", { duration = - 1 })
+		else
+			player:RemoveModifierByName("modifier_winner_duel_lua");
+		end
 		if(player:IsAlive()) then
 			if(player.saved) then
 				RestoreHero(player);
@@ -102,7 +119,6 @@ function TeleportRadiant(amtMin,amtRadiant)
 		for _,player in pairs(RadiantTeam) do
 
 			if(player:IsAlive()) then	
-				player:AddNewModifier(player, nil, "modifier_fountain_aura_effect_lua", { duration = - 1 })
 				counter = counter + 1;	
 				SaveAbout(player);
 				maxMod(player);
@@ -117,7 +133,7 @@ function TeleportRadiant(amtMin,amtRadiant)
      		while(IsInByValue(num,DuelTeam)) do
      			num = math.random(1,amtRadiant);
      		end
-     		DuelTeamp[i]=num;
+     		DuelTeam[i]=num;
      		print("---------------NUM   "..num);
      	end
 
@@ -200,10 +216,10 @@ function DuelTeleport:WinTeam(TeamNumber)
 
 	if(TeamNumber == DireTeam) then
 		print("Winner Dier")
-		TeleportToEnd();
+		TeleportToEnd(DireTeam);
 	else
 		print("Winner Radiant")
-		TeleportToEnd();
+		TeleportToEnd(RadiantTeam);
 	end
 end
 
