@@ -9,6 +9,7 @@ _G.quantity = {}
 _G.Creeps = {"Creep_base","Creep_swamp_2","Creep_winter_2"}
 _G.TriggerType = {"lowSpawn","middleSpawn","hideSpawn"}
 _G.NcripsInStack = 4
+
 MAX_LEVEL = 80  
 
 XP_PER_LEVEL_TABLE = {0,100}
@@ -16,22 +17,14 @@ for i=3,MAX_LEVEL do
 XP_PER_LEVEL_TABLE[i] = XP_PER_LEVEL_TABLE[i-1] + 100 * i
 end
 
+LinkLuaModifier( "modifier_winner_duel_lua", LUA_MODIFIER_MOTION_NONE )
 
-if DuelTimer == nil then
-	_G.DuelTimer = class({})
-end
 
 require( 'DuelTimer')
 
-if DuelTeleport == nil then
-	_G.DuelTeleport = class({})
-end
 
 require( 'DuelTeleport' )
 
-if Events == nil then
-	_G.Events = class({})
-end
 
 require( 'Events' )
 
@@ -159,13 +152,12 @@ end
 function CAddonTemplateGameMode:InitGameMode()
 	print( "Template addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
-	    GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
+	GameRules:GetGameModeEntity():SetUseCustomHeroLevels( true )
     GameRules:GetGameModeEntity():SetCustomHeroMaxLevel( 80 )
     GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen( 10 )
 	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 10 )
 	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 20 )
-	
 end
 
 -- Evaluate the state of the game
@@ -177,4 +169,3 @@ function CAddonTemplateGameMode:OnThink()
 	end
 	return 1
 end
-	

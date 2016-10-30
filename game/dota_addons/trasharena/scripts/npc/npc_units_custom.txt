@@ -15,7 +15,7 @@
 	"RingRadius"         "80"
 	"Level" "10" 
 	"ConsideredHero"        "1"
-		"MinimapIcon"               "minimap_roshancamp"
+	"MinimapIcon"               "minimap_roshancamp"
 	    
 
 	"AbilityLayout"               "4"
@@ -40,8 +40,8 @@
 	"HealthBarOffset"			"260"
 
 	"BountyXP" 				"1000" 
-	"BountyGoldMin" 			"82" 
-	"BountyGoldMax" 			"85" 
+	"BountyGoldMin" 			"1000" 
+	"BountyGoldMax" 			"3000" 
 
 	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
 	"MovementSpeed" 			"320" 
@@ -100,8 +100,8 @@
 	"HealthBarOffset"			"260"
 
 	"BountyXP" 				"1000" 
-	"BountyGoldMin" 			"82" 
-	"BountyGoldMax" 			"85" 
+	"BountyGoldMin" 			"1000" 
+	"BountyGoldMax" 			"3000" 
 
 	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
 	"MovementSpeed" 			"320" 
@@ -345,7 +345,7 @@
 	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin" 			"10" 
 	"AttackDamageMax" 			"12" 
-	"AttackRate" 				"1.3" 
+	"AttackRate" 				"0.8" 
 	"AttackAnimationPoint" 		"0.26" 
 	"AttackAcquisitionRange" 	"1100" 
 	"AttackRange" 				"500" 

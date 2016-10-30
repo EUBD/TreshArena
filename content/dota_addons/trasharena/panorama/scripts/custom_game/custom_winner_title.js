@@ -1,9 +1,9 @@
-var COLOUR_NORMAL = "#FFFFFF";
-var COLOUR_WARNING = "#DF161F";
+var COLOUR_RADIANT = "#FFFFFF";
+var COLOUR_DIRE = "#2794EB";
 var TIMER_INTERVAL = 0.05;
 
 var startTime = -1;
-var timerDuration = 5;
+var timerDuration = 7;
 var WinnerTeamName = "Remaining";
 var Title = null;
 var timerWarning = -1; // Second to start warning at from end (-1 Disabled)
@@ -39,9 +39,16 @@ function PauseTimer( bool ) {
 
 
 function ShowWinner(table)
-{   Title.style.opasity = 1;
+{   
 	WinnerTeamName = table.TeamName || " ";
 	var TitleTextMsge = $( "#WinnerTeam");
+	if(table.TeamName === "the dark side")
+	{
+		TitleTextMsge.style['color'] = COLOUR_DIRE;
+	}
+	else{
+		TitleTextMsge.style['color'] = COLOUR_RADIANT;
+	}
 	TitleTextMsge.text = $.Localize(WinnerTeamName);
 	startTime = Game.GetGameTime();
 	UpdateTimer();
