@@ -135,7 +135,7 @@
 	"SoundSet"				""
 	"ModelScale" "3" 
 	"RingRadius"         "80"
-	"Level" "100" 
+	"Level" "500" 
 	"ConsideredHero"        "1"
 	
 	    
@@ -199,7 +199,7 @@
 	"Model" 				"models\creeps\neutral_creeps\n_creep_troll_skeleton\n_creep_skeleton_melee.vmdl" 		
 	"ModelScale" "3" 
 	"RingRadius"         "80"
-	"Level" "100" 
+	"Level" "500" 
 	"ConsideredHero"        "1"
 	
 	    
