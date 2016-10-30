@@ -1,0 +1,7 @@
+"publish_data"
+{
+	"title"		"Trash Arena"
+	"source_folder"		"trasharena"
+	"publish_time"		"1477676855"
+	"publish_time_readable"		"10/28/2016 08:47:35 PM"
+}

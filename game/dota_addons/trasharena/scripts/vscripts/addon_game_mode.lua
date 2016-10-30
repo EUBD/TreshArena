@@ -155,12 +155,7 @@ function CAddonTemplateGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen( 10 )
 	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 10 )
 	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 20 )
-	GameRules:SetHeroSelectionTime(0)
-	GameRules:SetGoldTickTime(3)
-	GameMode:SetBuybackEnabled(true)
-    GameMode:SetStashPurchasingDisabled(false)
-    GameMode:SetLoseGoldOnDeath(true)
-	GameRules:SetHeroRespawnEnabled(true)
+
 end
 
 -- Evaluate the state of the game

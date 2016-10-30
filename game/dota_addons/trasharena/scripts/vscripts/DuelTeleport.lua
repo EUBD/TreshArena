@@ -116,7 +116,7 @@ function TeleportRadiant(amtMin,amtRadiant)
      		while(IsInByValue(num,DuelTeam)) do
      			num = math.random(1,amtRadiant);
      		end
-     		DuelTeamp[i]=num;
+     		DuelTeam[i]=num;
      		print("---------------NUM   "..num);
      	end
 
