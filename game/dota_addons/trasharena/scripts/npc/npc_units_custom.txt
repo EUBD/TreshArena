@@ -15,8 +15,7 @@
 	"RingRadius"         "80"
 	"Level" "10" 
 	"ConsideredHero"        "1"
-	"MinimapIcon"               "minimap_roshancamp"
-
+		"MinimapIcon"               "minimap_roshancamp"
 	    
 
 	"AbilityLayout"               "4"
@@ -49,7 +48,7 @@
 	"MovementTurnRate" 			"0.5" 
 
 	"StatusHealth" 				"10000" 
-	"StatusHealthRegen" 			"0" 
+	"StatusHealthRegen" 			"1" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
 
@@ -77,7 +76,6 @@
 	"Level" "10" 
 	"ConsideredHero"        "1"
 	"MinimapIcon"               "minimap_roshancamp"
-
 	    
 
 	"AbilityLayout"               "4"
@@ -110,7 +108,7 @@
 	"MovementTurnRate" 			"0.5" 
 
 	"StatusHealth" 				"10000" 
-	"StatusHealthRegen" 			"0" 
+	"StatusHealthRegen" 			"1" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
 
@@ -164,10 +162,10 @@
 	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 	//"ProjectileSpeed"            "900"
 	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	
-		"HealthBarOffset"           "550"		
-		"RingRadius"                "140"
 
+		"HealthBarOffset"           "550"		
+		"RingRadius"                "140"	
+		
 	"BountyXP" "3500" 
 		"BountyGoldMin" "2000" 
 		"BountyGoldMax" "10000" 
@@ -205,18 +203,18 @@
 	"ConsideredHero"        "1"
 	
 	    
-"AbilityLayout"               "5"
+
+	"AbilityLayout"               "4"
 		"Ability1" "skeleton_king_vampiric_auraforboss" 
 		"Ability2"	"necronomicon_warrior_sight"
 		"Ability3"	"tidehunter_kraken_shell"
 		"Ability4"	"neutral_spell_immunity"
-		"Ability5" "necrolyte_heartstopper_aura"
-		"ArmorPhysical" "40" 
+	"ArmorPhysical" "40" 
 		"MagicalResistance" "70"
 		"DisableResistance"            "100.0"	
 
 	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin" "1800" 
+		"AttackDamageMin" "1800" 
 	"AttackDamageMax" "2000" 
 	"AttackRate" 				"0.8" 
 	"AttackAnimationPoint" 		"0.26" 
@@ -227,74 +225,9 @@
 	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 	//"ProjectileSpeed"            "900"
 	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	
-		"HealthBarOffset"           "550"		
-		"RingRadius"                "140"
 
-	"BountyXP" "3500" 
-		"BountyGoldMin" "2000" 
-		"BountyGoldMax" "10000" 
-
-	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
-	"MovementSpeed" 			"420" 
-	"MovementTurnRate" 			"0.5" 
-
-	"StatusHealth" 				"250000" 
-	"StatusHealthRegen" 			"80" 
-	"StatusMana" 				"3000" 
-	"StatusManaRegen" 			"2" 
-
-	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
-	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
-	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	"AttackType"    "chaos"
-	"ArmorType"     "heavy" 
-
-	"VisionDaytimeRange" 		"1400" 
-	"VisionNighttimeRange" 		"800" 
-
-	"HasInventory" 				"0" 	
-
-	
-	}
-		"Golem_Dire" 
-	{
-	"BaseClass" 				"npc_dota_creature" 
-						//
-	"Model" 				"models/creeps/lane_creeps/creep_dire_hulk/creep_dire_diretide_ancient_hulk.vmdl" 		
-	"ModelScale" "2" 
-	"RingRadius"         "80"
-	"Level" "1000" 
-	"ConsideredHero"        "1"
-	"MinimapIcon"               "minimap_candybucket"
-"MinimapIconSize"           "1000"
-		
-	"AbilityLayout"               "5"
-		"Ability1" "skeleton_king_vampiric_auraforboss" 
-		"Ability2"	"necronomicon_warrior_sight"
-		"Ability3"	"tidehunter_kraken_shell"
-		"Ability4"	"neutral_spell_immunity"
-		"Ability5" "necrolyte_heartstopper_aura"
-		"ArmorPhysical" "60" 
-		"MagicalResistance" "70"
-		"DisableResistance"            "100.0"	
-
-	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin" "2800" 
-	"AttackDamageMax" "3000" 
-	"AttackRate" 				"0.8" 
-	"AttackAnimationPoint" 		"0.26" 
-	"AttackAcquisitionRange" 	"1100" 
-	"AttackRange" 				"500" 
-	"UseNeutralCreepBehavior"   "1" 
-
-	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
-	//"ProjectileSpeed"            "900"
-	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	
-		"HealthBarOffset"           "550"		
-		"RingRadius"                "140"
+	"HealthBarOffset"           "550"		
+	"RingRadius"                "140"
 
 	"BountyXP" "3500" 
 		"BountyGoldMin" "2000" 
@@ -321,14 +254,12 @@
 
 	"HasInventory" 				"0" 	
 
-	
 	}
-
-"Golem_Radiant" 
+		"Golem_Dire" 
 	{
 	"BaseClass" 				"npc_dota_creature" 
 						//
-	"Model" 				"models\creeps\lane_creeps\creep_radiant_hulk\creep_radiant_ancient_hulk.vmdl" 		
+	"Model" 				"models/creeps/lane_creeps/creep_dire_hulk/creep_dire_diretide_ancient_hulk.vmdl" 		
 	"ModelScale" "2" 
 	"RingRadius"         "80"
 	"Level" "1000" 
@@ -336,17 +267,17 @@
 	
 	    "MinimapIcon"               "minimap_candybucket"
 "MinimapIconSize"           "1000"
-	
+
 	"AbilityLayout"               "5"
 		"Ability1" "skeleton_king_vampiric_auraforboss" 
 		"Ability2"	"necronomicon_warrior_sight"
 		"Ability3"	"tidehunter_kraken_shell"
 		"Ability4"	"neutral_spell_immunity"
 		"Ability5" "necrolyte_heartstopper_aura"
-		"ArmorPhysical" "60" 
-		"MagicalResistance" "70"
+	"ArmorPhysical" 		"60" 	
+"MagicalResistance" "70"
 		"DisableResistance"            "100.0"	
-
+		
 	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin" "2800" 
 	"AttackDamageMax" "3000" 
@@ -359,20 +290,19 @@
 	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 	//"ProjectileSpeed"            "900"
 	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	
-		"HealthBarOffset"           "550"		
-		"RingRadius"                "140"
 
-	"BountyXP" "3500" 
-		"BountyGoldMin" "2000" 
-		"BountyGoldMax" "10000" 
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
 
 	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
 	"MovementSpeed" 			"420" 
 	"MovementTurnRate" 			"0.5" 
 
 	"StatusHealth" 				"500000" 
-	"StatusHealthRegen" 			"200" 
+	"StatusHealthRegen" 			"100" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
 
@@ -388,7 +318,69 @@
 
 	"HasInventory" 				"0" 	
 
+	}
+
+"Golem_Radiant" 
+	{
+	"BaseClass" 				"npc_dota_creature" 
+						//
+	"Model" 				"models\creeps\lane_creeps\creep_radiant_hulk\creep_radiant_ancient_hulk.vmdl" 		
+	"ModelScale" "2" 
+	"RingRadius"         "80"
+	"Level" "1000" 
+	"ConsideredHero"        "1"
 	
+	    
+
+	"AbilityLayout"               "5"
+		"Ability1" "skeleton_king_vampiric_auraforboss" 
+		"Ability2"	"necronomicon_warrior_sight"
+		"Ability3"	"tidehunter_kraken_shell"
+		"Ability4"	"neutral_spell_immunity"
+		"Ability5" "necrolyte_heartstopper_aura"
+"ArmorPhysical" 		"60" 	
+"MagicalResistance" "70"
+		"DisableResistance"            "100.0"	
+
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin" 			"10" 
+	"AttackDamageMax" 			"12" 
+	"AttackRate" 				"1.3" 
+	"AttackAnimationPoint" 		"0.26" 
+	"AttackAcquisitionRange" 	"1100" 
+	"AttackRange" 				"500" 
+	"UseNeutralCreepBehavior"   "1" 
+
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
+	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+
+	"HealthBarOffset"			"260"
+
+	"BountyXP" 				"1000" 
+	"BountyGoldMin" 			"82" 
+	"BountyGoldMax" 			"85" 
+
+	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
+	"MovementSpeed" 			"420" 
+	"MovementTurnRate" 			"0.5" 
+
+	"StatusHealth" 				"500000" 
+	"StatusHealthRegen" 			"100" 
+	"StatusMana" 				"3000" 
+	"StatusManaRegen" 			"2" 
+
+	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
+	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
+	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"AttackType"    "chaos"
+	"ArmorType"     "heavy" 
+
+	"VisionDaytimeRange" 		"1400" 
+	"VisionNighttimeRange" 		"800" 
+
+	"HasInventory" 				"0" 	
 
 	}
 	//swamp boss
@@ -401,21 +393,23 @@
 	"RingRadius"         "80"
 	"Level" "50" 
 	"ConsideredHero"        "1"
-		
+	
+	    
+
 	"AbilityLayout"               "5"
 		"Ability1" "skeleton_king_vampiric_auraforboss" 
 		"Ability2"	"necronomicon_warrior_sight"
 		"Ability3"	"tidehunter_kraken_shell"
 		"Ability4"	"neutral_spell_immunity"
 		"Ability5" "necrolyte_heartstopper_aura"
-		"ArmorPhysical" "30" 
+	"ArmorPhysical" "30" 
 		"MagicalResistance" "70"
 		"DisableResistance"            "100.0"	
 
 	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin" "800" 
 	"AttackDamageMax" "1500" 
-	"AttackRate" 				"0.8" 
+	"AttackRate" 				"0.8"
 	"AttackAnimationPoint" 		"0.26" 
 	"AttackAcquisitionRange" 	"1100" 
 	"AttackRange" 				"500" 
@@ -424,13 +418,13 @@
 	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 	//"ProjectileSpeed"            "900"
 	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	
-		"HealthBarOffset"           "550"		
+
+	"HealthBarOffset"           "550"		
 		"RingRadius"                "140"
 
 	"BountyXP" "3500" 
 		"BountyGoldMin" "2000" 
-		"BountyGoldMax" "10000" 
+		"BountyGoldMax" "10000"
 
 	"MovementCapabilities" 		"DOTA_UNIT_CAP_MOVE_GROUND" 
 	"MovementSpeed" 			"420" 
@@ -453,7 +447,6 @@
 
 	"HasInventory" 				"0" 	
 
-	
 	}
 	"Creep_base" 
 	{
@@ -472,17 +465,17 @@
 	"ArmorPhysical" 		"4" 
 	"MagicalResistance" 		"45" 
 
-	"AttackCapabilities" 		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin" 			"20" 
 	"AttackDamageMax" 			"25" 
 	"AttackRate" 				"1.1" 
 	"AttackAnimationPoint" 		"0.3" 
 	"AttackAcquisitionRange" 	"300" 
-	"AttackRange" 				"328" 
+	"AttackRange" 				"128" 
 	"UseNeutralCreepBehavior"   "1" 
 
-	"ProjectileModel"          "particles/units/heroes/hero_crystalmaiden/maiden_base_attack.vpcf"
-	"ProjectileSpeed"            "900"
+	//"ProjectileModel"            "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	//"ProjectileSpeed"            "900"
 	"BoundsHullName"        "DOTA_HULL_SIZE_HERO"
 
 	"HealthBarOffset"			"260"
@@ -590,7 +583,7 @@
 
 	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin" 			"30" 
-	"AttackDamageMax" 			"34" 
+	"AttackDamageMax" 			"35" 
 	"AttackRate" 				"1.1" 
 	"AttackAnimationPoint" 		"0.3" 
 	"AttackAcquisitionRange" 	"300" 
@@ -603,7 +596,7 @@
 
 	"HealthBarOffset"			"260"
 
-	"BountyXP" 				"70" 
+	"BountyXP" 				"80" 
 	"BountyGoldMin" 			"35" 
 	"BountyGoldMax" 			"38" 
 
@@ -781,7 +774,7 @@
 
 	"HealthBarOffset"			"260"
 
-	"BountyXP" 				"180" 
+	"BountyXP" 				"200" 
 	"BountyGoldMin" 			"95" 
 	"BountyGoldMax" 			"100" 
 
@@ -847,7 +840,7 @@
 	"MovementSpeed" 			"320" 
 	"MovementTurnRate" 			"0.8" 
 
-	"StatusHealth" 				"3000" 
+	"StatusHealth" 				"1000" 
 	"StatusHealthRegen" 			"3" 
 	"StatusMana" 				"0" 
 	"StatusManaRegen" 			"0" 
@@ -906,7 +899,7 @@
 	"MovementSpeed" 			"320" 
 	"MovementTurnRate" 			"0.8" 
 
-	"StatusHealth" 				"3000" 
+	"StatusHealth" 				"1000" 
 	"StatusHealthRegen" 			"3" 
 	"StatusMana" 				"0" 
 	"StatusManaRegen" 			"0" 

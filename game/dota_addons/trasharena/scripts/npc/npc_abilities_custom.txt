@@ -2,9 +2,10 @@
 "DOTAAbilities"
 {
 	"Version"		"1"
-
 		// Ability: Antimage Mana Break
 	//=================================================================================================================
+
+
 	"antimage_mana_break"
 	{
 		// General
@@ -17,8 +18,8 @@
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-			{
+		"AbilitySpecial"
+		{
 				"01"
 				{
 					"var_type"				"FIELD_FLOAT"
@@ -34,9 +35,9 @@
 					"var_type"				"FIELD_FLOAT"
 					"mana_pct_per_hit"		"0.8"
 				}
-			}
-	
+		}
 	}
+	
 	//=================================================================================================================
 	// Ability: Antimage Blink
 	//=================================================================================================================
@@ -46,8 +47,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5004"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-	
-			"MaxLevel"						"7"
+"MaxLevel"						"7"
 	
 			// Casting
 			//-------------------------------------------------------------------------------------------------------------
@@ -60,12 +60,11 @@
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityManaCost"				"120 110 100 90 80 70 60"
-			
-			// Special	
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-				"01"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		"01"
 				{
 					"var_type"				"FIELD_INTEGER"
 					"blink_range"			"850 925 980 1000 1075 1150 1250"
@@ -76,10 +75,8 @@
 					"var_type"				"FIELD_INTEGER"
 					"min_blink_range"		"200"
 				}
-			}
+		}
 	}
-	
-	
 	
 	//=================================================================================================================
 	// Ability: Antimage Spell Shield
@@ -121,6 +118,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
 		"FightRecapLevel"				"2"
+
 		"MaxLevel"						"7"
 	
 			// Casting
@@ -135,13 +133,16 @@
 			// Cost
 			//-------------------------------------------------------------------------------------------------------------
 			"AbilityManaCost"				"125 200 275 325 425 525 600"
-	
-			
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-				"01"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// damage only
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 				{
 					"var_type"						"FIELD_FLOAT"
 					"mana_void_damage_per_mana"		"0.6 0.7 0.75 0.8 0.9 1.0 1.2"
@@ -158,9 +159,8 @@
 					"var_type"						"FIELD_INTEGER"
 					"mana_void_aoe_radius"			"600"
 				}
-			}
+		}
 	}
-		
 	
 		// Bounty Hunter: Shuriken Toss
 	//=================================================================================================================
@@ -195,7 +195,7 @@
 		"AbilitySpecial"
 		{
 			"01"
-				{
+		{
 					"var_type"				"FIELD_INTEGER"
 					"bonus_damage"			"150 225 300 375 450 625 720"
 				}
@@ -224,13 +224,13 @@
 		"MaxLevel"						"7"
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"12.0 11.0 10.0 8.0 7.0 5.0 3.0"
-				
-			// Special
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
-			{
-				"01"
+"AbilityCooldown"				"12.0 11.0 10.0 8.0 7.0 5.0 3.0"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 				{
 					"var_type"				"FIELD_INTEGER"
 					"crit_multiplier"		"150 250 350 450 500 550 600"
@@ -250,7 +250,7 @@
 					"var_type"				"FIELD_FLOAT"
 					"duration"				"3.0 3.0 3.0 3.0 3.0 3.0 3.0"
 				}
-			}
+		}
 	}	
 
 	//=================================================================================================================
@@ -289,7 +289,7 @@
 				"fade_time"					"2 1.5 1.2 1.0 0.75 0.5 0.25 "
 			}
 			"03"
-				{
+			{
 					"var_type"					"FIELD_INTEGER"
 					"bonus_damage"				"30 60 90 120 180 220 290"
 				}
@@ -323,9 +323,8 @@
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-
 		"AbilitySpecial"
-			{
+		{
 				"01"
 				{
 					"var_type"				"FIELD_INTEGER"
@@ -366,7 +365,7 @@
 					"var_type"				"FIELD_FLOAT"
 					"gold_steal"			"0.3 0.4 0.5 0.6 0.7 0.8 0.9"
 				}
-			}
+		}
 	}
 	
 	
@@ -466,7 +465,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-				"01"
+			"01"
 				{
 					"var_type"				"FIELD_INTEGER"
 					"radius"				"625"
@@ -491,7 +490,7 @@
 					"var_type"				"FIELD_FLOAT"
 					"max_damage"			"50000.0"
 				}
-			}
+		}
 	}
 
 	//=================================================================================================================
@@ -554,8 +553,8 @@
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
-			{
-				"01"
+		{
+			"01"
 				{
 					"var_type"						"FIELD_INTEGER"
 					"base_damage"					"20 25 30 35 70 90 100"
@@ -585,7 +584,7 @@
 					"var_type"						"FIELD_INTEGER"
 					"max_stacks"					"5 6 7 8 9 10 12"
 				}
-			}
+		}
 	}
 	
 	"crystal_maiden_crystal_nova"
@@ -752,26 +751,38 @@
 		}
 	}
 	
-//=================================================================================================================
+	//=================================================================================================================
 	// Ability: Crystal Maiden's Freezing Field
 	//=================================================================================================================
 	"crystal_maiden_freezing_field"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5129"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
 		"MaxLevel"						"7"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"10"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"90"
 		"AbilityDuration"				"10.0"
-	
+
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"200 300 400 500 600 700 800"
-	
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.35"	// Primarily about the damage
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -819,7 +830,7 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"105 170 250 320 450 750 820"
+			"damage"			"105 170 250 320 450 750 820"
 			}
 			"11"
 			{
@@ -841,7 +852,7 @@
 				"var_type"			"FIELD_INTEGER"
 				"duration_tooltip"	"10"
 			}
-			"15"
+				"15"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"damage_pct"		"4"
@@ -850,7 +861,14 @@
 		}
 	}
 	
-	"dazzle_poison_touch"
+	
+	
+
+		
+	//=================================================================================================================
+	// Dazzle: Shallow Grave
+	//=================================================================================================================
+"dazzle_poison_touch"
 	{
 		"MaxLevel"						"7"
 		
@@ -1078,7 +1096,6 @@
 		}
 	}
 	
-	
 	//=================================================================================================================
 	// Dazzle: Weave
 	//=================================================================================================================
@@ -1140,7 +1157,6 @@
 			}
 		}
 	}
-	
 	
 //Start of file Disruptor.txt
 	"disruptor_thunder_strike"
@@ -6041,17 +6057,127 @@
 			}
 		}
 	}
-	
 
+
+
+
+
+	"tidehunter_kraken_shell"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5119"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"12 24 36 60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_cleanse"		"500 450 300 150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_reset_interval"	"6.0 6.0 6.0 6.0"
+			}
+		}
+	}
+	
+	"necrolyte_heartstopper_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5159"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"900"		// If you change this, also change the AbilityCastRange above
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage"		"-0.6 -1.0 -1.4 -1.8" 
+			} 
+		}
+	}
+		"necronomicon_warrior_sight"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5201"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1000"
+			}
+		}
+	}
+	
+//=================================================================================================================
+	// Ability: Necrolyte's Heartstopper Aura
+	//=================================================================================================================
+	"necrolyte_heartstopper_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5159"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"900"		// If you change this, also change the AbilityCastRange above
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage"		"-0.6 -1.0 -1.4 -7.8" 
+			} 
+		}
+	}
 	
 	
 	//=================================================================================================================
 	// Ability: Attribute Bonus
 	//=================================================================================================================
-
-		"attribute_bonus"
+	"attribute_bonus"
 		{
-			"MaxLevel"				"100"
+			"MaxLevel"				"80"
 			"LevelsBetweenUpgrades"  "1"
 		}
 		
@@ -6097,18 +6223,14 @@
 					"IsBuff" "1"
 					"IsHidden" "0"
 					"Passive" "1"
-					"Attributes" 		    "MODIFIER_ATTRIBUTE_PERMANENT"
+					"Attributes" 		    "MODIFIER_ATTRIBUTE_MULTIPLE"
 					"Properties"
 					{
 						"MODIFIER_PROPERTY_HEALTH_BONUS"		"1000"
-					
 					}
 				}
 			}    
 		}
-		
-		
-		
 	
 	
 }
