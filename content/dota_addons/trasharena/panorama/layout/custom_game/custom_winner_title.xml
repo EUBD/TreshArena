@@ -10,6 +10,7 @@
     <Panel hittest="false" class="Clip">
       <Panel hittest="false" id="TitleBox" class="TitleBox">
             <Label id="WinnerTeam" text="None"/>
+            <Label id="Victory" text=""/>
       </Panel>
     </Panel>
   </Panel>

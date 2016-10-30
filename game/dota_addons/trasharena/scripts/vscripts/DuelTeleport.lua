@@ -6,8 +6,8 @@ _G.DireTpPoint = "TpDuelDier"
 _G.RadiantTpPoint = "TpDuelRadiant"
 _G.DireTeam = 3
 _G.RadiantTeam = 2
-_G.IntervalDuel = 22
-_G.TimeDuel = 12
+_G.IntervalDuel = 242
+_G.TimeDuel = 62
 _G.isDuel = false
 _G.IsKillBoss = false;
 
@@ -215,12 +215,12 @@ end
 function DuelTeleport:WinTeam(TeamNumber)
 
 	if(TeamNumber == DireTeam) then
-		print("Winner Dier")
-			Timers:CreateTimer(1, function()CustomGameEventManager:Send_ServerToAllClients("Show_Winner", {TeamName ="Dire Win"} ) return nil end);
+		print("Winner Dire")
+			Timers:CreateTimer(1, function()CustomGameEventManager:Send_ServerToAllClients("Show_Winner", {TeamName ="Dire victory"} ) return nil end);
 		TeleportToEnd(DireTeam);
 	else
 		print("Winner Radiant")
-			Timers:CreateTimer(1, function()CustomGameEventManager:Send_ServerToAllClients("Show_Winner", {TeamName ="Radiant Win"} ) return nil end);
+			Timers:CreateTimer(1, function()CustomGameEventManager:Send_ServerToAllClients("Show_Winner", {TeamName ="Radiant victory"} ) return nil end);
 		TeleportToEnd(RadiantTeam);
 	end
 end

@@ -7,9 +7,9 @@
 
 .Clip
 {
-    clip: rect(44px, 500px, 790px,0px);
+    clip: rect(44px, 350px, 790px,0px);
     horizontal-align:center;
-    width: 500px;
+    width: 350px;
     height: 890px;
 }
 /* 734 */
@@ -19,6 +19,7 @@
     height: 80px;
     background-size: 100%;
     horizontal-align: center;
+
     margin-top: 100px;
     margin-right: 0px;
     margin-left: 0px;
@@ -33,6 +34,7 @@
 {
     color: #FFFFFF;
     font-size: 41px;
+    font-family: "Comic Sans MS";
     font-family: "Edwardian Script ITC";
     font-weight: bold;
 
@@ -40,13 +42,25 @@
 
 #WinnerTeam
 {
+    text-align: center;
     margin-top: 19px;
     margin-left: 0px;
-    text-align: center;
+ 
     width: 500px;
+    text-shadow: 3px -1px 4px #000000;
+}
+
+#Victory
+{
+    color: #FF5126;
+    margin-top: 19px;
+    margin-left: 0px;
+
+    width: 500px;
+    text-shadow: 3px -1px 4px #000000;
 }
 
 .FadeIn
 {
-    opacity: 0.9;
+     opacity: 1;
 }
