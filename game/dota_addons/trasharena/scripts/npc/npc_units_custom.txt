@@ -52,7 +52,7 @@
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
 
-	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"TeamName" 			"DOTA_TEAM_NEUTRAL" 
 	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
 	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
@@ -112,7 +112,7 @@
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
 
-	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"TeamName" 			"DOTA_TEAM_NEUTRAL" 
 	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
 	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
@@ -179,7 +179,7 @@
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
 
-	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"TeamName" 			"DOTA_TEAM_NEUTRAL" 
 	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
 	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
@@ -242,7 +242,7 @@
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
 
-	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"TeamName" 			"DOTA_TEAM_NEUTRAL" 
 	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
 	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
@@ -257,15 +257,14 @@
 	}
 		"Golem_Dire" 
 	{
-	"BaseClass" 				"npc_dota_creep_lane" 
+	"BaseClass" 				"npc_dota_creature" 
 						//
 	"Model" 				"models/creeps/lane_creeps/creep_dire_hulk/creep_dire_diretide_ancient_hulk.vmdl" 		
 	"ModelScale" "2" 
 	"RingRadius"         "80"
 	"Level" "999" 
 	"ConsideredHero"        "1"
-	
-	    "MinimapIcon"               "minimap_ancient"
+"MinimapIcon"               "minimap_ancient"
 "MinimapIconSize"           "1000"
 
 	"AbilityLayout"               "5"
@@ -301,7 +300,7 @@
 	"MovementSpeed" 			"420" 
 	"MovementTurnRate" 			"0.5" 
 
-	"StatusHealth" 				"100" 
+	"StatusHealth" 				"500000" 
 	"StatusHealthRegen" 			"100" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
@@ -322,7 +321,7 @@
 
 "Golem_Radiant" 
 	{
-	"BaseClass" 				"npc_dota_creep_lane" 
+	"BaseClass" 				"npc_dota_creature" 
 						//
 	"Model" 				"models\creeps\lane_creeps\creep_radiant_hulk\creep_radiant_ancient_hulk.vmdl" 		
 	"ModelScale" "2" 
@@ -343,8 +342,8 @@
 		"DisableResistance"            "100.0"	
 "IsAncient"                    "1" 
 	"AttackCapabilities" 		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin" 			"10" 
-	"AttackDamageMax" 			"12" 
+	"AttackDamageMin" 			"2800" 
+	"AttackDamageMax" 			"3200" 
 	"AttackRate" 				"0.8" 
 	"AttackAnimationPoint" 		"0.26" 
 	"AttackAcquisitionRange" 	"1100" 
@@ -365,7 +364,7 @@
 	"MovementSpeed" 			"420" 
 	"MovementTurnRate" 			"0.5" 
 
-	"StatusHealth" 				"100" 
+	"StatusHealth" 				"500000" 
 	"StatusHealthRegen" 			"100" 
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
@@ -435,7 +434,7 @@
 	"StatusMana" 				"3000" 
 	"StatusManaRegen" 			"2" 
 
-	"TeamName" 			"DOTA_TEAM_GOODGUYS" 
+	"TeamName" 			"DOTA_TEAM_NEUTRAL" 
 	"CombatClassAttack" 		"DOTA_COMBAT_CLASS_ATTACK_HERO"
 	"CombatClassDefend" 		"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass" 	"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
