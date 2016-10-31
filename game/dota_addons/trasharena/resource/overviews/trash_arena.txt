@@ -1,8 +1,8 @@
 trash_arena
 {
 	material materials/overviews/trash_arena.vmat
-	pos_x -9958
-	pos_y 9968
-	scale 19.467
+	pos_x -9961
+	pos_y 9977
+	scale 19.475
 }
 
