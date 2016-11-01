@@ -6,8 +6,8 @@ _G.DireTpPoint = "TpDuelDier"
 _G.RadiantTpPoint = "TpDuelRadiant"
 _G.DireTeam = 3
 _G.RadiantTeam = 2
-_G.IntervalDuel = 242
-_G.TimeDuel = 62
+_G.IntervalDuel = 22
+_G.TimeDuel = 12
 _G.isDuel = false
 _G.IsKillBoss = false;
 
