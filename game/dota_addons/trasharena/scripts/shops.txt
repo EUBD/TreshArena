@@ -17,7 +17,8 @@
 		"item"		"item_ward_observer"
 		"item"		"item_ward_sentry"
 		"item"		"item_vladmir_datadriven"		
-		"item"    "item_vortex"					
+		"item"    "item_vortex"	
+	"item"  "item_vladmir2"	
 	}
 
 	"attributes"

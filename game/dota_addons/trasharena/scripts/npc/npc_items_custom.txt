@@ -142,6 +142,189 @@
 			}
 		}
 	}
+	"item_recipe_vladmir2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1349"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"                     "item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						""	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_vladmir2"
+		"ItemRequirements"
+		{
+			"01"						"item_assault;item_vladmir"
+		}
+	}
+"item_vladmir2"
+	{
+		"ID"							"348"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"            "vladmir2"
+		"CastRange"						"950"
+		"ItemQuality"                   "epic"		// consumable component rare epic artifact secretshop
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"950"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"steal_prc"				"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_prc"				"18"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen_aura"		"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen"				"5"
+			}
+			"06"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"bonus_attack_speed"    "40"
+			}
+			"07"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"bonus_armor"           "12"
+			}
+			"08"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"aura_attack_speed"     "30"
+			}
+			"09"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"aura_positive_armor"   "8"
+			}
+			"10"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"aura_negative_armor"   "-8"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_vlad_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%hp_regen"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT""%bonus_attack_speed"
+				}
+			}
+
+			"modifier_vlad_aura_emmiter"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Aura"                  "modifier_item_vlad_armor_aura"
+				"Aura_Radius"           "%aura_radius"
+				"Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"            "DOTA_UNIT_TARGET_ALL"
+				"Aura_ApplyToCaster"    "1"
+			}
+			"modifier_item_vlad_armor_aura"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"TextureName"	"item_vladmir2"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"					"%mana_regen_aura"
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"           "%dmg_prc"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"          		    "%aura_positive_armor"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%aura_attack_speed"
+				}
+				
+				"OnAttackLanded"
+				{
+					"Lifesteal"
+					{
+						"Target"            "ATTACKER"
+						"LifestealPercent"  "%steal_prc"
+					}
+				}
+			}
+			"modifier_item_vlad_disarmor_emmiter"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Aura"                  "modifier_item_vlad_disarmor_aura"
+				"Aura_Radius"           "%aura_radius"
+				"Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"            "DOTA_UNIT_TARGET_ALL"
+				"Aura_ApplyToCaster"    "0"
+			}
+			"modifier_item_vlad_disarmor_aura"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsDebuff"	"1"
+				"TextureName"	"item_vladmir2"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%aura_negative_armor"
+				}
+			}
+		}
+	}
+
+"item_recipe_vladmir2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"349"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"                     "item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						""	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_vladmir2"
+		"ItemRequirements"
+		{
+			"01"						"item_assault;item_vladmir"
+		}
+	}
 
 
 
@@ -184,7 +367,7 @@
 		"ItemCost"						"9000"
 		"ItemShopTags"					"lifesteal;damage;armor;regen_mana;regen_health"
 		"ItemQuality"					"rare"
-		"ItemAliases"					"vladmirs offering;vlads"
+		"ItemAliases"					"vladmirs vlad;vlads"
 
 		"ItemKillable"					"1"
 		"ItemSellable"					"1"
