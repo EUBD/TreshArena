@@ -1,6 +1,6 @@
 "DOTAAbilities"
 {
-	"item_war_axe_piece"
+	"item_piece_old_gods"
     {
         "ID"                            "2030"
         "ItemCost"                      "800"
@@ -8,24 +8,25 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "Model"                         "models/props_gameplay/red_box.vmdl" 
         "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
-        "AbilityTextureName"            "war_axe_piece"
+        "AbilityTextureName"            "piece_old_gods"
         "ItemQuality"                   "epic"      // consumable component rare epic artifact secretshop
         "ItemInitialCharges"            "1"
         "ItemStackable"                 "1"
-        "ItemPurchasable"               "0"
-        
+        "ItemPurchasable"               "1"
+		"ItemSellable"					"1"
+		"ItemDisassemblable"			"0"
         "AbilitySpecial"
         {
             "01"
             {
                 "var_type"  "FIELD_INTEGER"
-                "damage"        "35"
+                "damage"        "135"
             }
         }
 
         "Modifiers"
         {
-            "modifier_war_axe_piece"
+            "modifier_piece_old_gods"
             {
                 "Passive"   "1"
                 "IsHidden"  "1"
@@ -34,7 +35,7 @@
                 {
                     "RunScript"
                     {
-                        "ScriptFile"    "items/item_war_axe_piece.lua"
+                        "ScriptFile"    "items/item_piece_old_gods.lua"
                         "Function"      "Base"
                     }
                 }
@@ -43,12 +44,12 @@
                 {
                     "RunScript"
                     {
-                        "ScriptFile"    "items/item_war_axe_piece.lua"
+                        "ScriptFile"    "items/item_piece_old_gods.lua"
                         "Function"      "Destroy"
                     }
                 }
             }
-            "modifier_war_axe_piece_damage"
+            "modifier_piece_old_gods_damage"
             {
                 "Passive"   "1"
                 "IsHidden"  "1"
@@ -59,30 +60,31 @@
             }
         }
     }
-"item_recipe_war_axe"
-        {
-            // General
-            //-------------------------------------------------------------------------------------------------------------
-            "ID"                            "2031"                     
-            "Model"                         "models/props_gameplay/recipe.mdl"
-            "BaseClass"                     "item_datadriven"
-            "AbilityTextureName"            "item_recipe"
-            
-            // Item Info
-            //-------------------------------------------------------------------------------------------------------------
-            "ItemCost"                      ""  
-            "ItemShopTags"                  ""
-            
-            // Recipe
-            //-------------------------------------------------------------------------------------------------------------
-            "ItemRecipe"                    "1"
-            "ItemResult"                    "item_war_axe"
-            "ItemRequirements"
-            {
-                "01"                        "item_bfury;item_war_axe_dummy;item_bfury"
-            }
-        }
-"item_war_axe_dummy"
+	"item_recipe_essence_old_gods"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"4249"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"                     "item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_essence_old_gods"
+		"ItemRequirements"
+		{
+			"01"						"item_piece_old_gods;item_piece_old_gods;item_piece_old_gods;item_piece_old_gods;item_piece_old_gods;item_piece_old_gods;item_piece_old_gods;item_piece_old_gods;item_piece_old_gods;item_piece_old_gods;"
+		}
+	}
+		
+	
+"item_essence_old_gods"
     {
         "ID"                            "2032"
         "ItemCost"                      "4800"
@@ -90,10 +92,9 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "Model"                         "models/props_gameplay/red_box.vmdl" 
         "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
-        "AbilityTextureName"            "war_axe_dummy"
+        "AbilityTextureName"            "essence_old_gods"
         "ItemPurchasable"               "0"
         "ItemQuality"                   "epic"      // consumable component rare epic artifact secretshop
-        
         "AbilitySpecial"
         {
             "01"
@@ -117,129 +118,373 @@
             }
         }
     }
-"item_war_axe"
-    {
-        "BaseClass"                     "item_datadriven" //указываем класс предмета
-        "ID"                            "2033"  //У вольво предмет 145 ID, мы ставим 1145, для себя
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE" //пассивка (сплэш) 
-        "AbilityTextureName"            "war_axe" //иконка предмета
-        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-        "ItemDisassemblable"            "1"
-        "ItemKillable"                  "1" 
-        "ItemSellable"                  "1"
-        "ItemPurchasable"               "1"
-        "ItemDroppable"                 "1"
-        "ItemShareability"              "ITEM_NOT_SHAREABLE"
-    
-        "ItemShopTags"                  "damage;health_regen;mana_regen;hard_to_tag" //тэги для 
-        "ItemQuality"                   "artifact" //качество предмета стоит epic, значит предмет редкий    
-        "AbilitySpecial" //Специальные значения предмета, чтобы мы могли их брать отсюда
-        {
-            "01"
-            {
-                "var_type"                      "FIELD_INTEGER"
-                "bonus_damage"                  "340" //[b]Бонусный урон, пока что просто задается как параметр, если оставите его так, то он не будет давать урона[/b]
-            }
-            "02"
-            {
-                "var_type"                      "FIELD_INTEGER"
-                "bonus_health_regen"            "16" //бонусная регенерация хп
-            }
-            "03"
-            {
-                "var_type"                      "FIELD_INTEGER"
-                "bonus_mana_regen_percentage"   "160" //бонусная регенерация маны в процентах
-            }
-            "04"
-            {
-                "var_type"                      "FIELD_INTEGER"
-                "cleave_damage_percent"         "75" //процент сплэша
-            }
-            "05"
-            {
-                "var_type"                      "FIELD_INTEGER"
-                "cleave_radius"                 "450" //радиус сплэша
-            }
-        }
+	"item_recipe_helmet_old_gods"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"4247"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"                     "item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_helmet_old_gods"
+		"ItemRequirements"
+		{
+			"01"						"item_essence_old_gods;"
+		}
+	}
+	
+	
+	"item_helmet_old_gods"
+	{       
+		"ID"							"4248"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"            "helmet_old_gods"
+		"ItemQuality"                   "epic"		// consumable component rare epic artifact secretshop
 
-        "Modifiers" //Секция модифиеры
-        {           
-            "modifier_war_axe" //Модификатор баттлы
-                {
-                    "Passive"           "1" //пассивный
-                    "IsHidden"          "1" //скрытый, не виден на панели статусов
-                    "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE" //Мультипл тут означает что предмет усиливает сразу несколько параметров
-                    
-                    "Properties"
-                    {
-                        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"      "%bonus_damage"
-                        "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"       "%bonus_health_regen"
-                        "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"       "%bonus_mana_regen_percentage" //То же самое с регеном маны и хп.
-                    }
-                    
-                    "OnCreated" //СОБЫТИЕ: когда юнит поднимает предмет, мы запускаем скрипт
-                    {
-                        "RunScript" //вот тут секция запуска скрипта
-                        {
-                            "ScriptFile"        "items/item_war_axe.lua" //название скрипта
-                            "Function"          "modifier_item_bfury_datadriven_on_created" //функция внутри скрипта
-                        }
-                    }
-                    
-                    "OnDestroy" //СОБЫТИЕ: когда предмет выкидывается
-                    {
-                        "RunScript" //запускаем скрипт)
-                        {
-                            "ScriptFile"        "items/item_war_axe.lua" //путь к скрипту)
-                            "Function"          "modifier_item_bfury_datadriven_on_destroy" //функция
-                        }
-                    }
-                    
-                    "ThinkInterval" "0.03"
-                    "OnIntervalThink"
-                    {
-                        "RunScript"
-                        {
-                            "ScriptFile"        "items/item_jfury.lua"
-                            "Function"          "modifier_item_bfury_datadriven_on_interval_think" //функция проверки
-                        }
-                    }
-                }
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"10"
+			}	
+		}
+			"Modifiers"
+			{
+			"modifier_helmet_old_passive"
+				{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 
-            "modifier_war_axe_cleave"  //Вот теперь тот самый сплэш.
-                {
-                    "Passive"           "0" //активная
-                    "IsHidden"          "1" //скрытый модификатор
-                    "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE" //даёт аттрибуты
-                    
-                    "OnAttackLanded" //СОБЫТИЕ: когда юнит обладающий предметом атаковал
-                    {
-                        "CleaveAttack" //сделать сплэш атаку.
-                        {
-                            "CleavePercent"     "%cleave_damage_percent" //процент сплэша, указан выше
-                            "CleaveRadius"      "%cleave_radius" //радиус
-                            "CleaveEffect"      "particles/items_fx/battlefury_cleave.vpcf" //эффект
-                        }
-                        
-                        "FireSound" //Так же воспроизвести звук
-                        {
-                            "EffectName"                "DOTA_Item.BattleFury" //путь к звуку
-                            "Target"                    "TARGET" //на цель, обладателя предмета
-                        }
-                    }
-                    
-                    "ThinkInterval" "0.03"  //ещё одна доп. проверка на ближника/дальника
-                    "OnIntervalThink"
-                    {
-                        "RunScript"
-                        {
-                            "ScriptFile"        "items/item_war_axe.lua"
-                            "Function"          "modifier_item_bfury_datadriven_cleave_on_interval_think"
-                        }
-                    }
-                }
-            }
-    }
+				"Properties"
+					{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" "%bonus_health"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_health_regen"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"				
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
+					}
+				}
+			
+			}	
+		
+	
+	}	
+	
+	"item_recipe_mail_old_gods"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"4249"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"                     "item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mail_old_gods"
+		"ItemRequirements"
+		{
+			"01"						"item_essence_old_gods;"
+		}
+	}	
+"item_mail_old_gods"
+	{       
+		"ID"							"4250"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"            "mail_old_gods"
+		"ItemQuality"                   "epic"		// consumable component rare epic artifact secretshop
+
+		"AbilitySpecial"
+		{
+			"01"
+					{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"8"
+					}
+		
+		}
+			"Modifiers"
+			{
+			"modifier_mail_old_passive"
+				{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+					{
+		
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"				
+	
+					}
+				}
+			
+			}	
+		
+	
+	}		
+"item_recipe_boots_old_gods"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"4252"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"                     "item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_boots_old_gods"
+		"ItemRequirements"
+		{
+			"01"						"item_essence_old_gods;"
+		}
+	}	
+"item_boots_old_gods"
+	{       
+		"ID"							"4253"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"            "boots_old_gods"
+		"ItemQuality"                   "epic"		// consumable component rare epic artifact secretshop
+
+		"AbilitySpecial"
+		{
+			"01"
+					{
+				"var_type"				"FIELD_INTEGER"
+				"speed"			"50"
+					}
+		
+		}
+			"Modifiers"
+			{
+			"modifier_boots_old_passive"
+				{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+					{
+		
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%speed"				
+	
+					}
+				}
+			
+			}	
+		
+	
+	}		
+	
+"item_recipe_gloves_old_gods"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"4254"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"                     "item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_gloves_old_gods"
+		"ItemRequirements"
+		{
+			"01"						"item_essence_old_gods;"
+		}
+	}	
+"item_gloves_old_gods"
+	{       
+		"ID"							"4255"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"            "gloves_old_gods"
+		"ItemQuality"                   "epic"		// consumable component rare epic artifact secretshop
+
+		"AbilitySpecial"
+		{
+			"01"
+					{
+				"var_type"				"FIELD_INTEGER"
+				"speed"			"50"
+					}
+		
+		}
+			"Modifiers"
+			{
+			"modifier_gloves_old_passive"
+				{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+					{
+		
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%speed"				
+	
+					}
+				}
+			
+			}	
+		
+	
+	}		
+	
+"item_recipe_set_old_gods"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"4256"						
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"                     "item_datadriven"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						""	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_set_old_gods"
+		"ItemRequirements"
+		{
+			"01"						"item_gloves_old_gods;item_boots_old_gods;item_mail_old_gods;item_helmet_old_gods"
+		}
+	}	
+"item_set_old_gods"
+	{       
+		"ID"							"4257"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"            "set_old_gods"
+		"ItemQuality"                   "epic"		// consumable component rare epic artifact secretshop
+
+		"AbilitySpecial"
+		{
+			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"450"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"15"
+			}	
+			"05"
+					{
+				"var_type"				"FIELD_INTEGER"
+				"attakspeed"			"60"
+					}
+					"06"
+					{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed"			"55"
+					}
+		}
+			"Modifiers"
+			{
+			"modifier_gloves_old_passive"
+				{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+					{
+		
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attakspeed"	
+				"MODIFIER_PROPERTY_HEALTH_BONUS" "%bonus_health"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" "%bonus_health_regen"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"				
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"	
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%movespeed"					
+	
+					}
+				}
+			
+			}	
+		
+	
+	}		
+	
+	
+
 "item_diamond_boss"
 	{
 		// General
@@ -380,11 +625,12 @@
 			}
 		}
 	}
-	"item_recipe_vladmir2"
+
+"item_recipe_vladmir3"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1349"						
+		"ID"							"1350"						
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"BaseClass"                     "item_datadriven"
 		
@@ -396,12 +642,144 @@
 		// Recipe
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_vladmir2"
+		"ItemResult"					"item_vladmir3"
 		"ItemRequirements"
 		{
-			"01"						"item_assault;item_vladmir"
+			"01"						"item_vladmir2;item_satanic;item_moon_shard"
 		}
-	}
+	}	
+	
+"item_vladmir3"
+	{
+		"ID"							"1351"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"                         "models/props_gameplay/red_box.vmdl" 
+		"Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+		"ItemDeclarations"        		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"            "vladmir3"
+		"CastRange"						"950"
+		"ItemQuality"                   "epic"		// consumable component rare epic artifact secretshop
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"950"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"steal_prc"				"40"
+			}
+	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen"				"5"
+			}
+			"06"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"bonus_attack_speed"    "60"
+			}
+			"07"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"bonus_armor"           "12"
+			}
+			"08"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"aura_attack_speed"     "40"
+			}
+			"09"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"aura_positive_armor"   "10"
+			}
+			"10"
+			{
+				"var_type"              "FIELD_INTEGER"
+				"aura_negative_armor"   "-10"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_vlad3_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%hp_regen"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT""%bonus_attack_speed"
+				}
+			}
+
+			"modifier_vlad3_aura_emmiter"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Aura"                  "modifier_item_vlad3_armor_aura"
+				"Aura_Radius"           "%aura_radius"
+				"Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"            "DOTA_UNIT_TARGET_ALL"
+				"Aura_ApplyToCaster"    "1"
+			}
+			"modifier_item_vlad3_armor_aura"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"TextureName"	"item_vladmir3"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"           "%dmg_prc"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"          		    "%aura_positive_armor"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%aura_attack_speed"
+				}
+				
+				"OnAttackLanded"
+				{
+					"Lifesteal"
+					{
+						"Target"            "ATTACKER"
+						"LifestealPercent"  "%steal_prc"
+					}
+				}
+			}
+			"modifier_item_vlad3_disarmor_emmiter"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"Aura"                  "modifier_item_vlad3_disarmor_aura"
+				"Aura_Radius"           "%aura_radius"
+				"Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"            "DOTA_UNIT_TARGET_ALL"
+				"Aura_ApplyToCaster"    "0"
+			}
+			"modifier_item_vlad3_disarmor_aura"
+			{
+				"Passive"	"0"
+				"IsHidden"	"0"
+				"IsDebuff"	"1"
+				"TextureName"	"item_vladmir3"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%aura_negative_armor"
+				}
+			}
+		}
+	}	
+	
+	
+	
 "item_vladmir2"
 	{
 		"ID"							"348"
@@ -426,16 +804,7 @@
 				"var_type"				"FIELD_INTEGER"
 				"steal_prc"				"20"
 			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dmg_prc"				"18"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_aura"		"100"
-			}
+	
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -444,7 +813,7 @@
 			"06"
 			{
 				"var_type"              "FIELD_INTEGER"
-				"bonus_attack_speed"    "40"
+				"bonus_attack_speed"    "20"
 			}
 			"07"
 			{
@@ -454,7 +823,7 @@
 			"08"
 			{
 				"var_type"              "FIELD_INTEGER"
-				"aura_attack_speed"     "30"
+				"aura_attack_speed"     "20"
 			}
 			"09"
 			{
@@ -501,7 +870,6 @@
 				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"					"%mana_regen_aura"
 					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"           "%dmg_prc"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"          		    "%aura_positive_armor"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"				"%aura_attack_speed"

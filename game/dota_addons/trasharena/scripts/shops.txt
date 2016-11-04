@@ -38,6 +38,10 @@
 		"item"		"item_ogre_axe"
 		"item"		"item_blade_of_alacrity"
 		"item"		"item_staff_of_wizardry"
+		"item"  "item_vladmir3"
+		"item"		"item_piece_old_gods"
+		"item" "item_essence_old_gods"
+
 	}
 
 	"weapons_armor"
@@ -54,6 +58,9 @@
 		"item"		"item_claymore"				
 		"item"		"item_javelin"
 		"item"		"item_mithril_hammer"	
+		"item" "item_helmet_old_gods"
+			"item" "item_mail_old_gods"
+
 	}
 			
 	"misc"
@@ -72,7 +79,9 @@
 		"item"		"item_ghost"		
 		"item"		"item_shadow_amulet"	
 		"item"		"item_ring_of_health"
-		"item"		"item_void_stone"			
+		"item"		"item_void_stone"		
+		"item" "item_boots_old_gods"
+		"item" "item_gloves_old_gods"		
 	}	
 	
 	// Level 1 - Green Recipes
