@@ -38,6 +38,7 @@
 		"item"		"item_ogre_axe"
 		"item"		"item_blade_of_alacrity"
 		"item"		"item_staff_of_wizardry"
+			"item"  "item_vladmir3"	
 	}
 
 	"weapons_armor"
