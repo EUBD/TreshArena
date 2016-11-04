@@ -11,9 +11,10 @@ function Base( keys )
 	            if current_item:GetName() == "item_war_axe_piece" then
 	                keys.caster:RemoveItem(current_item)
 	                keys.caster:AddItem(CreateItem("item_war_axe_dummy", keys.caster, keys.caster))  
-	        end
-	    end
+	        	end
+	    	end
 	    
+		end
 	end
 end
 

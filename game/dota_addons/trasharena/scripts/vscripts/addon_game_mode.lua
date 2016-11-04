@@ -3,12 +3,8 @@
 --------------------------------------------------------------------------------
 _G.nNEUTRAL_TEAM = 4
 _G.nCREATURE_RESPAWN_TIME = 5
-_G.nCREATURE_RESPAWNBOSS_TIME = 25
-_G.nMaxCreeps = 10
-_G.quantity = {}
-_G.Creeps = {"Creep_base","Creep_swamp_2","Creep_winter_2"}
-_G.TriggerType = {"lowSpawn","middleSpawn","hideSpawn"}
-_G.NcripsInStack = 4
+_G.nCREATURE_RESPAWNBOSS_TIME = 5
+
 
 MAX_LEVEL = 80  
 
@@ -31,6 +27,9 @@ require( 'Events' )
 
 require('Timers')
 
+
+require('Spawner')
+
 if CAddonTemplateGameMode == nil then
 	CAddonTemplateGameMode = class({})
 end
@@ -46,28 +45,7 @@ function Precache( context )
 end
 
 function OnEntityKilled (event)
-    local killedEntity = EntIndexToHScript(event.entindex_killed)
-	local sCreatureName = killedEntity:GetUnitName()
-	local vSpawnLoc = killedEntity.vSpawnLoc
-	local vSpawnVector = killedEntity.vSpawnVector
-	local Number = killedEntity.targetname; 
-	local intNumber = tonumber(Number);
-	print(Number);
-	Events:Onplayer_death(event);
-	if(intNumber ~= nil) then
-		if(quantity[intNumber] > 0) then
-			quantity[intNumber] = quantity[intNumber] - 1;
-		end
-	end
-	 
-if (sCreatureName ~= "start boss") then
-	else
-		local newItem = CreateItem("item_diamond_boss", nil, nil)
-		newItem:SetPurchaseTime(0)
-		CreateItemOnPositionSync(killedEntity:GetOrigin(), newItem)
-		newItem:LaunchLoot(false, 300, 0.75, killedEntity:GetOrigin() + RandomVector(RandomFloat(50, 350)))
-
-	end
+	Events:KillEntity(event)
  end
  
  function SpawnUnit (sCreatureName, vSpawnLoc, vSpawnVector)
@@ -79,36 +57,10 @@ if (sCreatureName ~= "start boss") then
 
 function SpawnCreeps()
 
-	GameRules:GetGameModeEntity():SetThink(Spawner)
+	Spawner:StartSpawn();
 end
 
-function Spawner ()
-	print("SPAWN");
-	local Ncreeps = NcripsInStack;
-	local  NumberSpawn = 0;
-	for k = 1,#TriggerType do
-		local Table = Entities:FindAllByName(TriggerType[k]);
-		for j = 1,#Table do
-			NumberSpawn = NumberSpawn + 1;
-	 		local npc = Table[j];
-	 		local CreepsName = Creeps[k];
-	 		print(NumberSpawn);
-	 		local point = npc:GetAbsOrigin()
-	 		for i=1,Ncreeps do
-	 			if(quantity[NumberSpawn] == nil) then quantity[NumberSpawn] = 0; end
-	 			if(quantity[NumberSpawn] <= nMaxCreeps) then
-	 			quantity[NumberSpawn] = quantity[NumberSpawn] + 1;
-	 	 		local current = CreateUnitByName(CreepsName, point, true, nil, nil, DOTA_TEAM_NEUTRALS)
-	 			current.targetname = NumberSpawn;
-	 			else
-	 			break;
-	 			end
-	 		end
-		end
-	end
- print("Spawn");
-return nCREATURE_RESPAWNBOSS_TIME;
-end
+
 
 function OnStartGame(event)
 		print("Detected Event");

@@ -2,6 +2,10 @@ if Events == nil then
 	_G.Events = class({})
 end
 
+_G.DropItems = {"item_war_axe_piece"}
+_G.probabilityDrop = 0.1;
+
+
 function Events:Onplayer_death(event)
 	print("player_death");
 	if(isDuel) then 
@@ -59,6 +63,49 @@ end
 	return false;
 	
 end
+
+function Events:KillEntity(event)
+	    local killedEntity = EntIndexToHScript(event.entindex_killed)
+		local sCreatureName = killedEntity:GetUnitName()
+		local vSpawnLoc = killedEntity.vSpawnLoc
+		local vSpawnVector = killedEntity.vSpawnVector
+		local Number = killedEntity.targetname; 
+		local intNumber = tonumber(Number);
+		print(Number);
+		Events:Onplayer_death(event);
+		if(intNumber ~= nil) then
+			if(quantity[intNumber] > 0) then
+				quantity[intNumber] = quantity[intNumber] - 1;
+			end
+		end
+	 
+	if (IsInByValue(sCreatureName,CreepsLow)) then
+		if(probabilityItem(probabilityDrop)) then
+		local newItem = CreateItem(DropItems[1], nil, nil)
+			newItem:SetPurchaseTime(0)
+			CreateItemOnPositionSync(killedEntity:GetOrigin(), newItem)
+			newItem:LaunchLoot(false, 300, 0.75, killedEntity:GetOrigin() + RandomVector(RandomFloat(50, 350)))
+		end
+
+	end
+end
+
+function probabilityItem(persent)
+	local border = persent*100;
+	local key  = math.random(1,100);
+
+	if(key <= border) then
+		return true;
+	end
+
+	return false;
+		
+
+	
+
+	
+end
+
 
 function Teleport(hero,point)
 	hero:SetAbsOrigin(point);
