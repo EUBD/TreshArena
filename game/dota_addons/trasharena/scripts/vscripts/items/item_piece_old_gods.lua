@@ -9,20 +9,14 @@ function Base( keys )
 	        local current_item = keys.caster:GetItemInSlot(i)
 	        if current_item ~= nil then
 	            if current_item:GetName() == "item_piece_old_gods" then
-	                keys.caster:RemoveItem(current_item)
-<<<<<<< HEAD:game/dota_addons/trasharena/scripts/vscripts/items/item_war_axe_piece.lua
-	                keys.caster:AddItem(CreateItem("item_war_axe_dummy", keys.caster, keys.caster))  
-	        	end
-	    	end
-=======
-	                keys.caster:AddItem(CreateItem("item_essence_old_gods", keys.caster, keys.caster))  
+	                keys.caster:RemoveItem(current_item);
+	                keys.caster:AddItem(CreateItem("item_essence_old_gods", keys.caster, keys.caster))  ;
 				end
 			end
->>>>>>> origin/master:game/dota_addons/trasharena/scripts/vscripts/items/item_piece_old_gods.lua
-	    
-		end
+	    end
 	end
 end
+
 function Destroy( keys )
 	local modifier = "modifier_piece_old_gods_damage"
 	local caster = keys.caster

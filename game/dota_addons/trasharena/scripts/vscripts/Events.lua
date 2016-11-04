@@ -2,7 +2,7 @@ if Events == nil then
 	_G.Events = class({})
 end
 
-_G.DropItems = {"item_war_axe_piece"}
+_G.DropItems = {"item_piece_old_gods"}
 _G.probabilityDrop = 0.1;
 
 
@@ -84,7 +84,7 @@ function Events:KillEntity(event)
 		local newItem = CreateItem(DropItems[1], nil, nil)
 			newItem:SetPurchaseTime(0)
 			CreateItemOnPositionSync(killedEntity:GetOrigin(), newItem)
-			newItem:LaunchLoot(false, 300, 0.75, killedEntity:GetOrigin() + RandomVector(RandomFloat(50, 350)))
+			newItem:LaunchLoot(false, 300, 0.75, killedEntity:GetOrigin() + RandomVector(RandomFloat(50, 70)))
 		end
 
 	end
