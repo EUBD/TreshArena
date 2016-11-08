@@ -34,7 +34,7 @@ function GoOutFromZoneArena(event)
 
 			local DuelTpEntRadiant = Entities:FindByName(nil,RadiantTpPoint);
 			local DuelTpPointRadiant = DuelTpEntRadiant:GetAbsOrigin();
-			Teleport(hero,DuelTpPointRadiant);
+			TeleportE(hero,DuelTpPointRadiant);
 		else
 			local Table = Entities:FindAllInSphere(event.activator:GetAbsOrigin(),0.1);
 			if(IsInByValue(event.caller,Table)) then
@@ -42,7 +42,7 @@ function GoOutFromZoneArena(event)
 			end
 			local DuelTpEntDire = Entities:FindByName(nil,DireTpPoint);
 			local DuelTpPointDire = DuelTpEntDire:GetAbsOrigin();
-			Teleport(hero,DuelTpPointDire);
+			TeleportE(hero,DuelTpPointDire);
 		end
 	end
 end
@@ -107,7 +107,7 @@ function probabilityItem(persent)
 end
 
 
-function Teleport(hero,point)
+function TeleportE(hero,point)
 	hero:SetAbsOrigin(point);
     FindClearSpaceForUnit(hero, point, false);
     hero:Stop();
