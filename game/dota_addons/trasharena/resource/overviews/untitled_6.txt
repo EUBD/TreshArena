@@ -1,8 +1,0 @@
-untitled_6
-{
-	material materials/overviews/untitled_6.vmat
-	pos_x -9982
-	pos_y 9955
-	scale 19.464
-}
-

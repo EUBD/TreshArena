@@ -19,8 +19,8 @@ game/dota_addons/overthrow/
 game/dota_addons/lua_ability_example/
 game/dota_addons/hero_demo/
 game/dota_addons/testing/
-game/dota_addons/overthrow/
-
+common/dota_addons/life_in_arena/
+game/dota_addons/life_in_arena/
 
 _CommonRedist/
 dota/

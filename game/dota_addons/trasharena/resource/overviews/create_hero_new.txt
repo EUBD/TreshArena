@@ -1,8 +1,0 @@
-create_hero_new
-{
-	material materials/overviews/create_hero_new.vmat
-	pos_x -16379
-	pos_y 16383
-	scale 31.994
-}
-
