@@ -137,7 +137,7 @@ end
 function SetItemplayers(TeamNumber)
 
 	local i = 1;
-	local item = "item_helmet_old_gods";
+	local item = "item_soul";
 	local Tableusers = HeroList:GetAllHeroes();
 	if(TeamNumber == DireTeam ) then
 
