@@ -10,7 +10,8 @@ function HasForbiddenModifier(unit)
 	end
 
 	return false
-end	
+end
+
 function Bash(keys)
 	local caster 			= keys.caster
 	local target 			= keys.target
@@ -18,9 +19,6 @@ function Bash(keys)
 	local modifier_name 	= keys.ModifierName
 	local cooldown			= keys.Cooldown or 0
 	local cooldown_modifier = keys.CooldownModifier
-	
-
-
-	ability:ApplyDataDrivenModifier(caster, target, modifier_name, {duration = 0.02})
+	ability:ApplyDataDrivenModifier(caster, target, modifier_name, {})
 
 end

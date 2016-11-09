@@ -75,6 +75,7 @@
 	"item"	"item_shadow_amulet"	
 	"item"	"item_ghost"
 	"item"		"item_travel_boots"
+	"item"	"item_vladmir_datadriven"
 	
 	}
 				
@@ -119,6 +120,7 @@
 	"item"		"item_diffusal_blade"
 	"item"			"item_hades"
 "item"		"item_set_hades"
+
 	}
 		
 	// Level 4 - Orange / Orb / Artifacts				
