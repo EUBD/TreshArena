@@ -52,6 +52,7 @@ end
 
 function TeleportToEnd(TeamNumber)
 	if(isDuel) then
+		DuelTimer:StartTimerDuel();
 		local isWinDire = false;
 		local isWinRadiant = false;
 		if(TeamNumber == RadiantTeam) then
@@ -65,7 +66,7 @@ function TeleportToEnd(TeamNumber)
 		TeleportRadiantToEnd(isWinRadiant);
 		TeleportDireToEnd(isWinDire);
 		isDuel = false;
-		DuelTimer:StartTimerDuel();
+		
 	end
 	return nil
 end

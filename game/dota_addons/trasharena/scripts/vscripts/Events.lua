@@ -9,12 +9,17 @@ _G.probabilityDrop = 0.1;
 function Events:Onplayer_death(event)
 	print("player_death");
 	if(isDuel) then 
+		local mntDire 	 = DuelTeleport:amtKilleTeamNumber(DireTeam)
+		local mntRadiant = DuelTeleport:amtKilleTeamNumber(RadiantTeam)
 
-		if(DuelTeleport:amtKilleTeamNumber(DireTeam)==0) then
+		print("----------------- mntDire - "..mntDire);
+		print("----------------- mntRAdiant - "..mntRadiant);
+
+		if(mntDire==0) then
 			DuelTeleport:WinTeam(RadiantTeam)
 		end
 
- 		if(DuelTeleport:amtKilleTeamNumber(RadiantTeam)==0) then
+ 		if(mntRadiant==0) then
  			DuelTeleport:WinTeam(DireTeam)
  		end
 
@@ -104,6 +109,54 @@ function probabilityItem(persent)
 	
 
 	
+end
+
+
+function KillBossRadiant()
+	if(not IsKillBoss) then
+		IsKillBoss = true;
+		DuelTimer:StartTimerDuel();
+	end
+
+	SetItemplayers(RadiantTeam);
+
+end
+
+function KillBossDire()
+	if(not IsKillBoss) then
+		IsKillBoss = true;
+		DuelTimer:StartTimerDuel();
+	end
+
+	SetItemplayers(DireTeam);
+
+end
+
+
+function SetItemplayers(TeamNumber)
+
+	local i = 1;
+	local item = "item_blink";
+	local Tableusers = HeroList:GetAllHeroes();
+	if(TeamNumber == DireTeam ) then
+
+		for _, hero in pairs(Tableusers) do
+			if(hero:GetTeamNumber() == DireTeam and not hero:Isillusion()) then
+				hero:AddItem(CreateItem(item, hero,hero));
+			end 
+		end
+
+
+	else
+
+		for _, hero in pairs(Tableusers) do
+			if(hero:GetTeamNumber() == DireTeam and not hero:Isillusion()) then
+				hero:AddItem(CreateItem(item, hero,hero));
+			end 
+		end 
+
+
+	end
 end
 
 
