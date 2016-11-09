@@ -81,6 +81,7 @@ function TeleportRadiantToEnd(isWin)
 		end
 		if(player:IsAlive()) then	
 			if(player.saved) then
+				DeleteFrog(player);
 				RestoreHero(player);
         	end
      	end
@@ -88,6 +89,16 @@ function TeleportRadiantToEnd(isWin)
      end
 
 	print("TeleportEnd");
+end
+
+function SetFrog(player)
+	player:AddNewModifier(player, nil, "modifier_voodoo_lua", { duration = - 1 }) 
+	player.isfrog = true;
+end
+
+function DeleteFrog(player)
+	player:RemoveModifierByName("modifier_voodoo_lua");
+	player.isfrog = false;
 end
 
 function TeleportDireToEnd(isWin)
@@ -101,6 +112,7 @@ function TeleportDireToEnd(isWin)
 		end
 		if(player:IsAlive()) then
 			if(player.saved) then
+				DeleteFrog(player);
 				RestoreHero(player);
      			
      		end
@@ -110,6 +122,8 @@ function TeleportDireToEnd(isWin)
 	print("TeleportEnd");
 end
 
+
+
 function TeleportRadiant(amtMin,amtRadiant)
 	local DuelTpEntRadiant = Entities:FindByName(nil,RadiantTpPoint);
 	local DuelTpPointRadiant = DuelTpEntRadiant:GetAbsOrigin();
@@ -118,7 +132,7 @@ function TeleportRadiant(amtMin,amtRadiant)
 	if(amtRadiant == amtMin) then   
 		for _,player in pairs(RadiantTeam) do
 
-			if(player:IsAlive()) then	
+			if(player:IsAlive() and not player:IsIllusion()) then	
 				counter = counter + 1;	
 				SaveAbout(player);
 				maxMod(player);
@@ -139,10 +153,17 @@ function TeleportRadiant(amtMin,amtRadiant)
 
 		for _,player in pairs(RadiantTeam) do
 			if(IsInByValue(counter,DuelTeam)) then
-				if(player:IsAlive()) then
+				if(player:IsAlive() and not player:IsIllusion()) then
 					SaveAbout(player);
 					maxMod(player);
 					Teleport(player,DuelTpPointRadiant);
+     			end
+     		else
+     			if(player:IsAlive() and not player:IsIllusion()) then
+					SaveAbout(player);
+					maxMod(player);
+					Teleport(player,DuelTpPointRadiant);
+     				SetFrog(player);
      			end
      		end
      		counter = counter + 1;
@@ -177,7 +198,7 @@ function TeleportDire(amtMin,amtDire)
 	if(amtDire == amtMin) then   
 		for _,player in pairs(DireTeam ) do
 
-			if(player:IsAlive()) then	
+			if(player:IsAlive() and not player:IsIllusion()) then	
 				counter = counter + 1;	
 				SaveAbout(player);
 				maxMod(player);
@@ -199,12 +220,20 @@ function TeleportDire(amtMin,amtDire)
 		
 		for _,player in pairs(DireTeam) do
 			if(IsInByValue(counter,DuelTeam)) then	
-				if(player:IsAlive()) then		
+				if(player:IsAlive() and not player:IsIllusion()) then		
 					SaveAbout(player);
 					maxMod(player);
 					Teleport(player,DuelTpPointDire);
      			end
+     		else
+     			if(player:IsAlive() and not player:IsIllusion()) then
+					SaveAbout(player);
+					maxMod(player);
+					Teleport(player,DuelTpPointDire);
+     				SetFrog(player);
+     			end
      		end
+
      		counter = counter + 1;
      	end
 	end
@@ -237,7 +266,7 @@ function getAmtTeam(TeamNumber)
 
 		for _, hero in pairs(Tableusers) do
 			if(hero:GetTeamNumber() == DireTeam) then
-				if(hero:IsAlive()) then
+				if(hero:IsAlive() and not hero:IsIllusion()) then
 					i = i+1;
 				end
 			end 
@@ -250,7 +279,7 @@ function getAmtTeam(TeamNumber)
 		for _, hero in pairs(Tableusers) do
 			print(i.." - heroType = "..hero:GetTeamNumber())
 			if(hero:GetTeamNumber() == RadiantTeam) then
-				if(hero:IsAlive()) then
+				if(hero:IsAlive() and not hero:IsIllusion()) then
 					j = j+1;
 				end
 			end 
@@ -270,7 +299,7 @@ function DuelTeleport:amtKilleTeamNumber(TeamNumber)
 
 		for _, hero in pairs(Tableusers) do
 			if(hero:GetTeamNumber() == DireTeam) then
-				if(hero:IsAlive() and hero.saved == true) then
+				if(hero:IsAlive() and not hero:IsIllusion() and hero.saved == true and not hero.isfrog) then
 					i = i+1;
 				end
 			end 
@@ -283,7 +312,7 @@ function DuelTeleport:amtKilleTeamNumber(TeamNumber)
 		for _, hero in pairs(Tableusers) do
 			print(i.." - heroType = "..hero:GetTeamNumber())
 			if(hero:GetTeamNumber() == RadiantTeam) then
-				if(hero:IsAlive() and hero.saved == true) then
+				if(hero:IsAlive() and not hero:IsIllusion() and hero.saved == true and not hero.isfrog) then
 					j = j+1;
 				end
 			end 
