@@ -113,6 +113,7 @@ end
 
 
 function KillBossRadiant()
+
 	if(not IsKillBoss) then
 		IsKillBoss = true;
 		DuelTimer:StartTimerDuel();
@@ -136,12 +137,12 @@ end
 function SetItemplayers(TeamNumber)
 
 	local i = 1;
-	local item = "item_blink";
+	local item = "item_helmet_old_gods";
 	local Tableusers = HeroList:GetAllHeroes();
 	if(TeamNumber == DireTeam ) then
 
 		for _, hero in pairs(Tableusers) do
-			if(hero:GetTeamNumber() == DireTeam and not hero:Isillusion()) then
+			if(hero:GetTeamNumber() == DireTeam and not hero:IsIllusion()) then
 				hero:AddItem(CreateItem(item, hero,hero));
 			end 
 		end
@@ -150,8 +151,10 @@ function SetItemplayers(TeamNumber)
 	else
 
 		for _, hero in pairs(Tableusers) do
-			if(hero:GetTeamNumber() == DireTeam and not hero:Isillusion()) then
+
+			if(hero:GetTeamNumber() == RadiantTeam and not hero:IsIllusion()) then
 				hero:AddItem(CreateItem(item, hero,hero));
+				
 			end 
 		end 
 
