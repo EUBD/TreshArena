@@ -995,12 +995,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"1"
+				"bash_chance"			"35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_time"				"10.02"
+				"bash_time"				"0.2"
 			}
 			"05"
 			{
@@ -1079,7 +1079,7 @@
 			{
 				"IsHidden"	"0"
 				"Passive"	"0"
-				"Duration"	"%duration"
+				"Duration"	"%bash_time"
 				
 				"EffectName"            "particles/generic_gameplay/generic_stunned.vpcf"
 				"EffectAttachType"      "follow_overhead"
